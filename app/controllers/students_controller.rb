@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   def index
     # @students = Admin.where(id: session[:user_id]) || @students = Student.where(id: session[:user_id])
     @students = Student.where(id: session[:user_id])
-    @assignments = Assignment.where(student_id: session[:user_id])
+    # @assignments = Assignment.where(student_id: session[:user_id])
 
     # respond_to do |format|
     #   format.html
@@ -70,6 +70,6 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:name, :email, :password, :flavor, :admin_id, assignment_ids: [])
+      params.require(:student).permit(:name, :email, :password, :flavor, :admin_id)
     end
 end

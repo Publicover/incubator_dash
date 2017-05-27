@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = Admin.find_by_email(params[:email]) || user = Student.find_by_email(params[:email])
+    user = Admin.find_by_email(params[:email]) #|| user = Student.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       session[:user_flavor] = user.flavor
@@ -22,5 +22,5 @@ class SessionsController < ApplicationController
     session[:user_name] = nil
     redirect_to login_path, notice: "You have logged out."
   end
-  
+
 end

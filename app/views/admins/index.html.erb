@@ -1,2 +1,52 @@
 <h1>Admins#index</h1>
 <p>Find me in app/views/admins/index.html.erb</p>
+
+<center>
+
+  <h2>Listing Students</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Student's assignments</th>
+        <th>Assignment Description</th>
+        <th>Assignment Due Date</th>
+        <th>Completed?</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.title %>
+            <% end %> </td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.description %>
+          <% end %> </td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.due_date.strftime("%b %e, %Y") %>
+          <% end %> </td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.completed %>
+          <% end %> </td>
+          <td><%= link_to 'SHOW', student_path(student) %></td>
+          <td><%= link_to 'EDIT', edit_student_path(student) %></td>
+          <td><%= link_to 'DESTROY', student_path(student),
+                method: :delete,
+                data: { confirm: 'OK, well, just be careful.' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+    <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p>
+    <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
+
+  <p><%= link_to 'Logout', logout_path, method: :delete %></p>
+
+  </center>

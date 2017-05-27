@@ -1,0 +1,36 @@
+<h1>Students#show</h1>
+<p>Find me in app/views/students/show.html.erb</p>
+
+<center>
+
+<h1> STUDENT: <%= @student.name %> </h1>
+
+<br>
+
+<p>
+  <strong>Email:</strong>
+  <p><%= @student.email %></p>
+</p>
+
+<p>
+  <strong>Assignments:</strong>
+  <% @student.assignments.each do |item| %>
+    <p> <%= item.title %> </p>
+  <% end %>
+</p>
+
+<table>
+  <tbody>
+<td><%= link_to 'EDIT', edit_student_path(@student) %></td>
+<td><%= link_to 'DESTROY', student_path(@student),
+        method: :delete,
+        data: { confirm: 'OK, well, just be careful.' } %></td>
+  </tbody>
+</table>
+
+<br>
+<%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
+<%= link_to "STUDENT INDEX", admins_path %><br>
+<%= link_to "MAKE A NEW STUDENT", new_student_path %>
+
+</center>

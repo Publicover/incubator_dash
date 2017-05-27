@@ -1,0 +1,57 @@
+<center>
+<%= form_for @student do |f| %>
+
+  <% if @student.errors.any? %>
+
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@student.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><center><%= msg %></li>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <p>
+    <%= f.label "Name" %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label "Email" %><br>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label "Password" %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :flavor, value: "student" %>
+  </p>
+
+  <p>
+    <%= f.label "Admin" %><br>
+    <%= f.select :admin_id, [["Dana", 1], ["James", 2]] %>
+  </p>
+
+  <p>
+    <%= f.label "Assignments" %> <br>
+    <%= f.collection_check_boxes :assignment_ids, Assignment.all, :id, :title do |assignment| %>
+      <div class="collection-check-box">
+        <%= assignment.check_box %>
+        <%= assignment.label %>
+      </div>
+      <% end %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+</center>

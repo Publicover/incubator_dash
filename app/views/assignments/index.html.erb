@@ -1,0 +1,53 @@
+<h1>Assignments#index</h1>
+<p>Find me in app/views/assignments/index.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<center>
+
+<h1>Listing Assignments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Completed</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignments.each do |assignment| %>
+      <tr>
+        <td><%= assignment.title %></td>
+        <td><%= assignment.description %></td>
+        <td><%= assignment.due_date.strftime("%b %e, %Y") %></td>
+        <td><%= assignment.completed %></td>
+        <% if session[:user_flavor] == "admin" %>
+          <td><%= link_to 'SHOW', assignment_path(assignment) %></td>
+          <td><%= link_to 'EDIT', edit_assignment_path(assignment) %></td>
+          <td><%= link_to 'DESTROY', assignment_path(assignment),
+                  method: :delete,
+                  data: { confirm: 'OK, well, just be careful.' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+  <!-- <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p> -->
+  <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
+
+<% if session[:user_flavor] == "admin" %>
+  <p>Go to the assignment index: <%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
+  <p>Go to the student index: <%= link_to "STUDENT INDEX", admins_path %></p>
+  <p>Make a new student: <%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
+<% end %>
+<p><%= link_to 'Logout', logout_path, method: :delete %></p>
+
+
+</center>

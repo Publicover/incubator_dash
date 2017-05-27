@@ -1,0 +1,48 @@
+<center>
+<%= form_for @assignment do |f| %>
+
+  <% if @assignment.errors.any? %>
+
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@assignment.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <% @assignment.errors.full_messages.each do |msg| %>
+        <li><center><%= msg %></li>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <p>
+    <%= f.label "Title" %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label "Description" %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.label "Due Date" %><br>
+    <%= f.date_select :due_date %>
+  </p>
+
+  <p>
+    <%= f.label "Students" %> <br>
+    <%= f.collection_check_boxes :student_ids, Student.all, :id, :name do |student| %>
+    <div class="collection-check-box">
+        <%= student.check_box %>
+        <%= student.label %>
+      </div>
+      <% end %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+</center>

@@ -1,0 +1,44 @@
+<h1>Assignments#show</h1>
+<p>Find me in app/views/assignments/show.html.erb</p>
+
+<center>
+
+<h1> ASSIGNMENT: <%= @assignment.title %> </h1>
+
+<br>
+
+<p>
+  <strong>Description:</strong>
+  <p><%= @assignment.description %></p>
+</p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @assignment.due_date.strftime("%b %e, %Y") %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @assignment.completed %>
+</p>
+
+<% if session[:user_flavor] == "admin" %>
+<table>
+  <tbody>
+    <td><%= link_to 'EDIT', edit_assignment_path(@assignment) %></td>
+    <td><%= link_to 'DESTROY', assignment_path(@assignment),
+            method: :delete,
+            data: { confirm: 'OK, well, just be careful.' } %></td>
+  </tbody>
+</table>
+<% end %>
+
+<br>
+<%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
+<% if session[:user_flavor] == "admin" %>
+  <p><%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
+  <p><%= link_to "STUDENT INDEX", admins_path %></p>
+  <p><%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
+<% end %>
+
+</center>

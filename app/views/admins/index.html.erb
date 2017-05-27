@@ -20,6 +20,18 @@
       <% @students.each do |student| %>
         <tr>
           <td><%= student.name %></td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.title %>
+            <% end %> </td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.description %>
+          <% end %> </td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.due_date.strftime("%b %e, %Y") %>
+          <% end %> </td>
+          <td><% student.assignments.each do |assignment| %>
+            <br> <%= assignment.completed %>
+          <% end %> </td>
           <td><%= link_to 'SHOW', student_path(student) %></td>
           <td><%= link_to 'EDIT', edit_student_path(student) %></td>
           <td><%= link_to 'DESTROY', student_path(student),

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root 'dashboards#index'
-
   # get 'dashboards/index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -10,6 +8,8 @@ Rails.application.routes.draw do
   resources :admins
 
   resources :students
+
+  root 'dashboards#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,4 +1,4 @@
-class AssignmentsController < ApplicationController
+# class AssignmentsController < ApplicationController
   class AssignmentsController < ApplicationController
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
     before_action :logged_in_as_admin?, only: [:new, :edit, :create, :update, :destroy]
@@ -70,9 +70,7 @@ class AssignmentsController < ApplicationController
       end
 
       def assignment_params
-        params.require(:assignment).permit(:title, :description, :due_date, student_ids: [])
+        params.require(:assignment).permit(:title, :description, :due_date, :completed, student_ids: [])
       end
 
   end
-
-end

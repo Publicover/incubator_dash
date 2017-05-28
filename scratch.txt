@@ -1,0 +1,10 @@
+ALL LINKS
+
+admin     <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
+admin     <%= link_to "STUDENT INDEX", admins_path %><br>
+admin     <%= link_to "MAKE A NEW STUDENT", new_student_path %>
+admin     <%= link_to "ASSIGNMENT INDEX", assignments_path %>
+admin     <%= link_to "MAKE A NEW ASSIGNMENT", new_assignment_path %> 
+
+
+<%= link_to 'Logout', logout_path, method: :delete %>

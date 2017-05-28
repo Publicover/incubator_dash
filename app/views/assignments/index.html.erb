@@ -44,6 +44,7 @@
 
 <% if session[:user_flavor] == "admin" %>
   <p>Go to the assignment index: <%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
+  <p>Make a new assignment: <%= link_to "MAKE A NEW ASSIGNMENT", new_assignment_path %> </p>
   <p>Go to the student index: <%= link_to "STUDENT INDEX", admins_path %></p>
   <p>Make a new student: <%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
 <% end %>

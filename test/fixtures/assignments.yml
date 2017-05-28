@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
-  due_date: 2017-05-27
-  completed: false
+  id: 1
+  title: Bio
+  description: Write a biography
+  due_date: 2005-05-22
+  completed: true
 
 two:
-  title: MyString
-  description: MyText
-  due_date: 2017-05-27
+  id: 2
+  title: Mission Statement
+  description: Write a mission statement
+  due_date: 2027-05-22
   completed: false

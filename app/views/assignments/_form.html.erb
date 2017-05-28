@@ -22,13 +22,15 @@
 
   <p>
     <%= f.label "Description" %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </p>
 
   <p>
     <%= f.label "Due Date" %><br>
     <%= f.date_select :due_date %>
   </p>
+
+  <%= f.hidden_field :completed, :value => false %>
 
   <p>
     <%= f.label "Students" %> <br>

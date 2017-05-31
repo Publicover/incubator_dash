@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'reminders/write_email'
+
+  get 'reminders/send_email'
+
   # get 'dashboards/index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

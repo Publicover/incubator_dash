@@ -1,2 +1,9 @@
 <h1>Reminders#write_email</h1>
 <p>Find me in app/views/reminders/write_email.html.erb</p>
+
+<h1>Write an email</h1>
+
+<%= form_tag reminders_send_email_path do %>
+ <%= email_field_tag :address, nil, placeholder: "Email address" %>
+ <%= submit_tag "SEND ME AN EMAIL"%>
+<% end %>

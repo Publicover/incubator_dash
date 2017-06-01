@@ -5,7 +5,7 @@ class StudentMailer < ApplicationMailer
   #
   #   en.student_mailer.view_single.subject
   #
-  def view_single(address)
+  def say_hi(address)
     @greeting = "Hey there."
 
     mail to: address, subject: "#holdmybeer"

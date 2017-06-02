@@ -32,7 +32,7 @@ class MustLogInTest < ActionDispatch::IntegrationTest
     assert_select "input[type=password]", 1
     # Log in
     post login_path email: "jill@jill.com", password: "jimjimjim"
-    assert_response :success
+    # assert_response :success
     assert_redirected_to root_path
     follow_redirect!
     # Make sure data populates on root

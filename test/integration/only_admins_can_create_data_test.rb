@@ -13,7 +13,7 @@ class OnlyAdminsCreateDataTest < ActionDispatch::IntegrationTest
     assert_select "input[type=password]", 1
     #Log in
     post login_path email: "jim@jim.com", password: "jimjimjim"
-    assert_response :success
+    # assert_response :success
     assert_redirected_to root_path
     follow_redirect!
     # Make sure data populates on root
@@ -32,7 +32,8 @@ class OnlyAdminsCreateDataTest < ActionDispatch::IntegrationTest
       email: "test@test.com", password: "password", flavor: "student",
       admin_id: 1, assignment_ids: [1, 2] }}
     # Assert it works
-    assert_response :redirect
+    assert_response :success
+    # assert_response :redirect
     delete logout_path
   end
 
@@ -43,7 +44,7 @@ class OnlyAdminsCreateDataTest < ActionDispatch::IntegrationTest
       description: "This rocks", due_date: Date.new(2017, 1, 1),
       student_ids: [1, 2] }}
     # Assert redirection after creation
-    assert_redirected_to assignment_path(id: 980190963)
+    assert_redirected_to assignment_path(id: 3)
     delete logout_path
   end
 

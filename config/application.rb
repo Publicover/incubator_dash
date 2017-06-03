@@ -13,5 +13,6 @@ module IncubatorDash
     # -- all .rb files in that directory are automatically loaded.
 
     config.active_job.que_adapter = :delayed_job
+    config.assets.initialize_on_precompile = false
   end
 end

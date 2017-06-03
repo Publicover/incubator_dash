@@ -1,7 +1,7 @@
 class Assignment < ApplicationRecord
   has_and_belongs_to_many :students
   # before_validation :check_date
-  validates :title, :description, :due_date, :completed, presence: true
+  validates :title, :description, :due_date, presence: true
 
   def completed=(completed)
   # #   # self[:due_date] > DateTime.now ? self[:completed] = true : self[:completed]

@@ -3,21 +3,7 @@ require 'test_helper'
 class StudentsCannotCreateDataTest < ActionDispatch::IntegrationTest
 
   def setup
-    get root_path
-    assert_redirected_to login_path
-    follow_redirect!
-    # Make sure we have it
-    assert_select 'h2', "Log in"
-    assert_select "input[type=email]", 1
-    assert_select "input[type=password]", 1
-    #Log in
-    post login_path email: "jill@jill.com", password: "jimjimjim"
-    # assert_response :success
-    assert_redirected_to root_path
-    follow_redirect!
-    # Make sure data populates on root
-    assert_select 'h1', "Dashboards#index"
-    assert_equal "You have logged in.", flash[:notice]
+    log_in_as_student
   end
 
   test "students cannot create students" do

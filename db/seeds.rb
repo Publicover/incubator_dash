@@ -13,6 +13,6 @@ student_rupert = Student.create!(name: "rupert", email: "rupert@rupert.com", pas
 student_sebastian = Student.create!(name: "sebastian", email: "seb@seb.com", password: "password", flavor: "student",
                 admin_id: 1, assignment_ids: [])
 week_one = Assignment.create!(title: "Bio", description: "Write a bio",
-           due_date: Date.new(2017, 1, 12), completed: false, student_ids: [1, 2])
+           completed: false, student_ids: [1, 2], due_date: Date.new(2017, 1, 12))
 week_two = Assignment.create!(title: "Mission", description: "Write a mission statement",
-           due_date: Date.new(2017, 12, 1), completed: false, student_ids: [1, 2])
+           completed: false, student_ids: [1, 2], due_date: Date.new(2017, 12, 1))

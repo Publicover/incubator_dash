@@ -5,7 +5,7 @@ class AdminsController < ApplicationController
   def index
     @admins = Admin.where(id: session[:user_id])
     @students = Student.where(admin_id: session[:user_id])
-    MakeReminderJob.perform_now("jim@sprintwithdash.com")
+    # MakeReminderJob.perform_now("jim@sprintwithdash.com")
   end
 
   def show

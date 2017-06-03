@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class StudentMailerTest < ActionMailer::TestCase
+  
   test "say_hi" do
     mail = StudentMailer.say_hi("to@example.org")
     assert_equal "#holdmybeer", mail.subject

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603140418) do
+ActiveRecord::Schema.define(version: 20170605133230) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
@@ -55,9 +55,13 @@ ActiveRecord::Schema.define(version: 20170603140418) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "flavor"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "admin_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["admin_id"], name: "index_students_on_admin_id"
   end
 

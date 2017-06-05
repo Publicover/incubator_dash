@@ -19,6 +19,11 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Avatar!</strong><br>
+  <%= image_tag @student.avatar %>
+</p>
+
 <table>
   <tbody>
 <td><%= link_to 'EDIT', edit_student_path(@student) %></td>

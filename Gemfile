@@ -10,6 +10,7 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'paperclip'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'

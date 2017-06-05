@@ -1,5 +1,5 @@
 <center>
-<%= form_for @student do |f| %>
+<%= form_for @student, html: { multipart: true } do |f| %>
 
   <% if @student.errors.any? %>
 
@@ -37,6 +37,11 @@
   <p>
     <%= f.label "Admin" %><br>
     <%= f.select :admin_id, [["Dana", 1], ["James", 2]] %>
+  </p>
+
+  <p>
+    <%= f.label :avatar%><br>
+    <%= f.file_field :avatar %>
   </p>
 
   <p>

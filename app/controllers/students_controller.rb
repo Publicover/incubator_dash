@@ -57,7 +57,11 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @student.destroy
 
-    redirect_to students_path
+    if session[:user_flavor] == "admin"
+      redirect_to admins_path
+    else
+      redirect_to students_path
+    end
   end
 
   private

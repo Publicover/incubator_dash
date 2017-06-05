@@ -21,7 +21,9 @@
 
 <p>
   <strong>Avatar!</strong><br>
-  <%= image_tag @student.avatar %>
+  <%= image_tag @student.avatar.url(:thumb) %>
+  <!-- <%= image_tag @student.avatar.url(:medium) %> -->
+  <!-- <%= image_tag @student.avatar %> -->
 </p>
 
 <table>

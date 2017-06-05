@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605133230) do
+ActiveRecord::Schema.define(version: 20170605192914) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 20170605133230) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "homeworks", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "student_id"
+    t.integer  "assignment_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.index ["assignment_id"], name: "index_homeworks_on_assignment_id"
+    t.index ["student_id"], name: "index_homeworks_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|

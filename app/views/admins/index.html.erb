@@ -13,6 +13,7 @@
         <th>Assignment Description</th>
         <th>Assignment Due Date</th>
         <th>Completed?</th>
+        <th>Files Uploaded</th>
       </tr>
     </thead>
 
@@ -31,6 +32,9 @@
           <% end %> </td>
           <td><% student.assignments.each do |assignment| %>
             <br> <%= assignment.completed %>
+          <% end %> </td>
+          <td><% student.homeworks.each do |homework| %>
+            <br> <%= homework.document %>
           <% end %> </td>
           <td><%= link_to 'SHOW', student_path(student) %></td>
           <td><%= link_to 'EDIT', edit_student_path(student) %></td>

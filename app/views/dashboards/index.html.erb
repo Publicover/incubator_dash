@@ -17,6 +17,8 @@
   <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p>
   <p>View assignments: <%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
   <p>Make a new assignment: <%= link_to 'NEW ASSIGNMENTS', new_assignment_path %></p>
+  <p>See your uploaded files: <%= link_to 'ALL HOMEWORK', homeworks_path %></p>
+  <p>Upload some homework: <%= link_to 'NEW HOMEWORK', new_homework_path %></p>
   <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
 <% end %>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>

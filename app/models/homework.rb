@@ -1,9 +1,10 @@
 class Homework < ApplicationRecord
   belongs_to :student
   belongs_to :assignment
-  has_attached_file :document
+  has_attached_file :document, styles: { medium: "300x300>", thumb: "50x50>" }
   validates_attachment_content_type :document,
     content_type: [
+      "image/jpeg",
       "application/pdf",
       "file/txt",
       "text/plain",
@@ -15,9 +16,9 @@ class Homework < ApplicationRecord
       "application/vnd.ms-powerpoint"
     ],
     message: "invalid attached file type"
-  after_save :set_name
+  # after_save :set_name
 
-  def set_name
-    self.update title: doc_file_name.sub(/\.[^.]+\z/, '').titleize
-  end
+  # def set_name
+  #   self.update title: document_file_name.sub(/\.[^.]+\z/, '').titleize
+  # end
 end

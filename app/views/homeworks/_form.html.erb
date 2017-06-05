@@ -1,0 +1,52 @@
+<center>
+
+<%= form_for @homework, html: {multipart: true } do |f| %>
+
+  <% if @homework.errors.any? %>
+  <div id="error_explanation">
+    <p>
+      <%= pluralize(@homework.errors.count, "error") %> prohibited
+      this article from being saved:
+    </p>
+    <% @homework.errors.full_messages.each do |msg| %>
+      <li><center><%= msg %></li>
+    <% end %>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label "Title" %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label "Assignment" %>
+    <%= f.collection_select(:assignment_id, Assignment.all, :id, :description) %>
+  </p>
+
+  <p>
+    <%= f.label "Student" %>
+    <%= f.collection_select(:student_id, Student.all, :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.label :document %>
+    <%= f.file_field :document %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+
+
+
+
+
+
+
+<% end %>
+
+
+
+</center>

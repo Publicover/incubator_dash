@@ -34,7 +34,7 @@
             <br> <%= assignment.completed %>
           <% end %> </td>
           <td><% student.homeworks.each do |homework| %>
-            <br> <%= homework.document %>
+            <br> <%= image_tag homework.document.url(:thumb) %>
           <% end %> </td>
           <td><%= link_to 'SHOW', student_path(student) %></td>
           <td><%= link_to 'EDIT', edit_student_path(student) %></td>
@@ -50,6 +50,7 @@
 
     <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p>
     <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
+    <p>Upload some homework: <%= link_to "HOMEWORK", homeworks_path %></p>
 
   <p><%= link_to 'Logout', logout_path, method: :delete %></p>
 

@@ -26,6 +26,14 @@
   <!-- <%= image_tag @student.avatar %> -->
 </p>
 
+<p>
+  <strong>Homework</strong>
+  <% @student.homeworks.each do |homework| %>
+    <p> <%= homework.title %> </p>
+    <p> <%= image_tag homework.document.url(:thumb) %> </p>
+  <% end %>
+</p>
+
 <table>
   <tbody>
 <td><%= link_to 'EDIT', edit_student_path(@student) %></td>

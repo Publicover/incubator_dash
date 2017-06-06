@@ -1,7 +1,7 @@
 class Homework < ApplicationRecord
   belongs_to :student
   belongs_to :assignment
-  has_attached_file :document, styles: { medium: "300x300>", thumb: "50x50>" }
+  has_attached_file :document, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :document,
     content_type: [
       "image/jpeg",

@@ -42,4 +42,8 @@ class ActiveSupport::TestCase
     # Make sure data populates on root
     assert_select 'h1', "Dashboards#index"
   end
+
+  def fake_file
+    fixture_file_upload 'jennifer_connelly.jpg'
+  end
 end

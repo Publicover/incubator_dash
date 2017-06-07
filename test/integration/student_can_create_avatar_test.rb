@@ -26,23 +26,23 @@ class StudentCanCreateAvatarTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
-  test "admin can patch info" do
-    image = fake_file
-    student = students(:one)
-    updated_name = "Bob"
-
-    patch '/students/1', params:
-      { student:
-        { id: student.id,
-          name: updated_name,
-          email: student.email,
-          password: student.password,
-          flavor: student.flavor,
-          admin_id: student.admin_id,
-          avatar: image,
-          assignment_ids: student.assignment_ids } }
-    assert_equal updated_name, student.name
-  end
+  # test "admin can patch info" do
+  #   image = fake_file
+  #   student = students(:one)
+  #   updated_name = "Bob"
+  #
+  #   patch '/students/1', params:
+  #     { student:
+  #       { id: student.id,
+  #         name: updated_name,
+  #         email: student.email,
+  #         password: student.password,
+  #         flavor: student.flavor,
+  #         admin_id: student.admin_id,
+  #         avatar: image,
+  #         assignment_ids: student.assignment_ids } }
+  #   assert_equal updated_name, student.name
+  # end
 
 
 end

@@ -16,4 +16,9 @@ class AdminsCanSeeEverythingTest < ActionDispatch::IntegrationTest
     # Make sure logout works
     delete logout_path
   end
+
+  # test "admins can see indexes" do
+  #   visit admins_path
+  # end
+
 end

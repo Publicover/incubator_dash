@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "Admin login" do
+RSpec.describe "Student login" do
 
   before :each do
-    Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
+    Student.create(name: "jill", email: "jill@jill.com", password: "password", flavor: "student", admin_id: 1)
   end
 
-  # subject { described_class.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")}
+  # subject { described_class.new(name: "jill", email: "jill@jill.com", password: "password", flavor: "student", admin_id: 1) }
 
   it "needs an email" do
     visit '/'
@@ -20,7 +20,7 @@ RSpec.describe "Admin login" do
   it "needs a password" do
     visit '/'
     expect(page).to have_text("You must log in to access this page")
-    fill_in 'Email', with: 'jim@jim.com'
+    fill_in 'Email', with: 'jill@jill.com'
     fill_in 'Password', with: ' '
     click_button 'Save changes'
     expect(page).to have_text("Credentials incorrect.")
@@ -29,7 +29,7 @@ RSpec.describe "Admin login" do
   it "works right" do
     visit '/'
     expect(page).to have_text("You must log in to access this page")
-    fill_in 'Email', with: 'jim@jim.com'
+    fill_in 'Email', with: 'jill@jill.com'
     fill_in 'Password', with: 'password'
     click_button 'Save changes'
     expect(page).to have_text("You have logged in.")

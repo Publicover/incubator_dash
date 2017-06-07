@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Student, :type => :model do
+RSpec.describe Student do
 
   let(:admin_one) { Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin") }
 

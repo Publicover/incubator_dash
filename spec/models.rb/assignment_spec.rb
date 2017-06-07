@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Assignment, :type => :model do
+RSpec.describe Assignment do
 
   # before :each do
   #   new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")

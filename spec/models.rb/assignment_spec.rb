@@ -10,7 +10,7 @@ RSpec.describe Assignment do
   #   new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
   # end
 
-  subject { described_class.create(title: "assignment", description: "buncha stuff", due_date: Date.new(2019-1-1)) }
+  subject { described_class.create(title: "assignment", description: "buncha stuff", due_date: Date.new(2090-1-1)) }
 
   it "needs a title" do
     subject.title = nil
@@ -32,8 +32,14 @@ RSpec.describe Assignment do
     expect(subject).to_not be_valid
   end
 
-  it "works right" do
+  it "works correctly" do
     expect(subject).to be_valid
+  end
+
+  it "adjusts value of :completed" do
+    expect(subject.completed).to eq false
+    subject.due_date = Date.new(2000-1-1)
+    expect(subject.completed).to eq true
   end
 
 end

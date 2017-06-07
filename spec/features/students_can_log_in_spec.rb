@@ -26,7 +26,7 @@ RSpec.describe "Student login" do
     expect(page).to have_text("Credentials incorrect.")
   end
 
-  it "works right" do
+  it "works correctly" do
     visit '/'
     expect(page).to have_text("You must log in to access this page")
     fill_in 'Email', with: 'jill@jill.com'

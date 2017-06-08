@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id])
+    @student = Student.find(params[:id]) || @student = Student.find(params[:user_id])
   end
 
   def new

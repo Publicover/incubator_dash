@@ -10,6 +10,7 @@
 <% if session[:user_flavor] == "admin" %>
   <p>View Students: <%= link_to 'STUDENTS', admins_path %></p>
 <% else %>
+  <p>View Profile: <%= link_to 'MY PROFILE', student_path(session[:user_id]) %></p>
   <p>View Assignments: <%= link_to 'STUDENTS', students_path %></p>
 <% end %>
 

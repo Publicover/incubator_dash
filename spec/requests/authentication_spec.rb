@@ -64,4 +64,32 @@ RSpec.describe "Authentication" do
     expect(response).to redirect_to login_path
   end
 
+  it "lets admins create students" do
+    new_admin = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
+
+    visit '/'
+    fill_in 'Email', with: 'jim@jim.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Save changes'
+    expect(page).to have_text("You have logged in.")
+
+    new_student = Student.create(name: "jill", email: "jill@jill.com",
+      password: "password", flavor: "student", admin_id: 1)
+    expect { post '/students', params: { student: new_student } }.to change(Student, :count)
+  end
+
+  it "lets admins create assignments" do
+    flunk
+  end
+
+  it "lets students look at assignments" do
+    flunk
+  end
+
+  it "lets students upload homework to assignments" do
+    flunk
+  end
+
+
+
 end

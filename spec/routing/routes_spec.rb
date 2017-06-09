@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "Renamed routes" do
 
-  # get 'login' => 'sessions#new'
-  # post 'login' => 'sessions#create'
-  # delete 'logout' => 'sessions#destroy'
-
   it "gets /login" do
     expect(:get => '/login').to route_to(:controller => "sessions", :action => "new")
   end

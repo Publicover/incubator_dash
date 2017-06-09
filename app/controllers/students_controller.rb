@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_as_admin?, only: [:new, :edit, :create, :update, :destroy]
+  before_action :logged_in_as_admin?, only: [:new, :create, :destroy]
   before_action :logged_in_as_student?
 
   # def index
@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id]) || @student = Student.find(params[:user_id])
+    @student = Student.find(params[:id])
   end
 
   def new

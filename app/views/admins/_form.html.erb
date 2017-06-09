@@ -1,0 +1,47 @@
+<center>
+<%= form_for @admin, html: { multipart: true } do |f| %>
+
+  <% if @admin.errors.any? %>
+
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@admin.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <% @admin.errors.full_messages.each do |msg| %>
+        <li><center><%= msg %></li>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <p>
+    <%= f.label "Name" %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label "Email" %><br>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label "Password" %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :flavor, value: "admin" %>
+  </p>
+
+  <p>
+    <%= f.label :avatar%><br>
+    <%= f.file_field :avatar %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+</center>

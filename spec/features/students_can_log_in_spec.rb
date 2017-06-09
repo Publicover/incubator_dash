@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Student login" do
 
-  before :each do
+  before do
     Student.create(name: "jill", email: "jill@jill.com", password: "password", flavor: "student", admin_id: 1)
   end
 

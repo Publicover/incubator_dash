@@ -29,7 +29,7 @@ RSpec.describe Student do
 
   it "needs an admin id" do
     subject.admin_id = nil
-    expect(subject).to be_valid
+    expect(subject).to_not be_valid
   end
 
   # TODO avatar file upload?

@@ -21,7 +21,7 @@
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= assignment.title %></td>
+        <td><%= link_to "#{assignment.title}", assignment_path(assignment) %></td>
         <td><%= assignment.description %></td>
         <td><%= assignment.due_date.strftime("%b %e, %Y") %></td>
         <td><%= assignment.completed %></td>

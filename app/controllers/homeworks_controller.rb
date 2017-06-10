@@ -1,5 +1,5 @@
 class HomeworksController < ApplicationController
-  before_action :logged_in_as_admin?
+  # before_action :logged_in_as_admin?
   before_action :logged_in_as_student?
 
   def index

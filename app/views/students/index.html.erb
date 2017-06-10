@@ -34,7 +34,8 @@
         <td><%= student.admin.name %></td>
         <td><% student.assignments.each do |assignment| %>
               <!-- <%= assignment.title %> -->
-          <br><%= assignment.title %>
+          <!-- <br><%= assignment.title %> -->
+          <%= link_to "#{assignment.title}", assignment_path(assignment) %><br>
         <% end %> </td>
         <td><% student.assignments.each do |assignment| %>
               <!-- <td><%= assignment.due_date.strftime("%b %e, %Y") %></td> -->
@@ -52,8 +53,7 @@
 
   <!-- <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p> -->
 
-  <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
-
+<p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
 
 </center>

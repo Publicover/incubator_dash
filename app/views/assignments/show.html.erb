@@ -22,16 +22,54 @@
   <%= @assignment.completed %>
 </p>
 
-<% if session[:user_flavor] == "admin" %>
-<table>
-  <tbody>
-    <td><%= link_to 'EDIT', edit_assignment_path(@assignment) %></td>
-    <td><%= link_to 'DESTROY', assignment_path(@assignment),
-            method: :delete,
-            data: { confirm: 'OK, well, just be careful.' } %></td>
-  </tbody>
-</table>
-<% end %>
+<p>
+  <strong>UPLOAD:</strong>
+  <% @assignment.homeworks.each do |homework| %>
+    <%= image_tag student.homework.document %>
+
+  <% end %>
+
+  <%= form_for @homework, html: {multipart: true } do |f| %>
+    <% if @homework.errors.any? %>
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@homework.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <% @homework.errors.full_messages.each do |msg| %>
+        <li><center><%= msg %></li>
+      <% end %>
+    </div>
+    <% end %>
+
+    <p>
+      <%= f.hidden_field :title, value: @assignment.title %>
+    </p>
+
+    <p>
+      <%= f.hidden_field :student_id, value: session[:user_id] %>
+    </p>
+
+    <p>
+      <%= f.hidden_field :assignment_id, value: @assignment.id %>
+    </p>
+
+    <p>
+      <%= f.label :document %>
+      <%= f.file_field :document %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</p>
+
+
+<br><p><%= link_to 'EDIT', edit_assignment_path(@assignment) %></p>
+<p><%= link_to 'DESTROY', assignment_path(@assignment),
+        method: :delete,
+        data: { confirm: 'OK, well, just be careful.' } %></p>
 
 <br>
 <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>

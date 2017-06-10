@@ -1,7 +1,7 @@
 # class AssignmentsController < ApplicationController
   class AssignmentsController < ApplicationController
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
-    before_action :logged_in_as_admin?, only: [:new, :edit, :create, :update, :destroy]
+    before_action :logged_in_as_admin?, only: [:new, :create, :destroy]
     before_action :logged_in_as_student?
 
 
@@ -22,6 +22,9 @@
 
     def show
       @assignment = Assignment.find(params[:id])
+      # @students = Student.where(admin_id: session[:user_id])
+      # @homework = Homework.where(assignment_id: session[:user_id])
+      @homework = Homework.new
     end
 
     def new

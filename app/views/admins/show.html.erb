@@ -19,7 +19,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= image_tag @admin.avatar.url(:thumb) %>
+  <%= image_tag @admin.avatar.url(:thumb), :html => { :id => 'my-avatar' } %>
 </p>
 
 <table>
@@ -30,3 +30,6 @@
         data: { confirm: 'OK, well, just be careful.' } %></td>
   </tbody>
 </table>
+
+<br>
+<p><%= link_to "FRONT PAGE", root_path %></p>

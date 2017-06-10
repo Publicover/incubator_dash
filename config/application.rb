@@ -27,5 +27,9 @@ module IncubatorDash
         :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
       }
     }
+
+    # config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    # config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+    # config.assets.precompile += %w( .svg .eot .woff .ttf)
   end
 end

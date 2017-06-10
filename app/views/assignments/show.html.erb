@@ -23,11 +23,8 @@
 </p>
 
 <p>
-  <strong>UPLOAD:</strong>
-  <% @assignment.homeworks.each do |homework| %>
-    <%= image_tag student.homework.document %>
+</p>
 
-  <% end %>
 
   <%= form_for @homework, html: {multipart: true } do |f| %>
     <% if @homework.errors.any? %>

@@ -14,6 +14,7 @@
       <th>Description</th>
       <th>Due Date</th>
       <th>Completed</th>
+      <th>Homework</th>
 
     </tr>
   </thead>
@@ -25,6 +26,12 @@
         <td><%= assignment.description %></td>
         <td><%= assignment.due_date.strftime("%b %e, %Y") %></td>
         <td><%= assignment.completed %></td>
+
+        <td><% assignment.homeworks.each do |homework| %>
+          <br> <%= image_tag homework.document.url(:thumb) %>
+          <% end %> </td>
+
+
         <% if session[:user_flavor] == "admin" %>
           <td><%= link_to 'SHOW', assignment_path(assignment) %></td>
           <td><%= link_to 'EDIT', edit_assignment_path(assignment) %></td>

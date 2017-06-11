@@ -12,6 +12,7 @@ gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'paperclip'
 gem "aws-sdk", '~> 2'
+# gem 'jquery-turbolinks'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'

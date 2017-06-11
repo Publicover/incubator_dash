@@ -26,6 +26,10 @@
       # @students = Student.where(admin_id: session[:user_id])
       # @homework = Homework.where(assignment_id: session[:user_id])
       @homework = Homework.new
+      # respond_to do |format|
+      #   format.html {redirect_to "show" }
+      #   # format.js
+      # end
     end
 
     def new

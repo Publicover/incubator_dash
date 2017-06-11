@@ -15,12 +15,15 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function()  {
+// $(document).on 'turbolinks:load', ->
+// $(document).on('page:change', function(){
+// 8009 foxwood road
 
- $('#upload_homework').hide(); //Initially form wil be hidden.
+  $('#upload_homework').hide(); //Initially form wil be hidden.
 
-  $('#homework_popup_button').click(function() {
-   $('#upload_homework').toggle("fast");//Form shows on button click
+    $('#homework_popup_button').click(function() {
+    $('#upload_homework').toggle("slow");//Form shows on button click
 
    });
  });

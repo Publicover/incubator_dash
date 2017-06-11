@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <%= render 'partials/nav_bar' %>
+    <%= render 'partials/nav_bar' unless @disable_nav %>
 
     <p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>

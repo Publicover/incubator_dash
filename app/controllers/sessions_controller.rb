@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController
 
   def new
+    @disable_nav = true
   end
 
   def create
+    @disable_nav = true
     user = Admin.find_by_email(params[:email]) || user = Student.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
@@ -18,6 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    @disable_nav = true
     session[:user_id] = nil
     session[:user_flavor] = nil
     session[:user_name] = nil

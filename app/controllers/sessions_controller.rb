@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:user_flavor] = user.flavor
       session[:user_name] = user.name
+      session[:user_avatar] = user.avatar
       redirect_to root_path, notice: "You have logged in."
     else
       flash.now[:alert] = "Credentials incorrect."

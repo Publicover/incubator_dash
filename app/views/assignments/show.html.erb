@@ -26,7 +26,7 @@
 </p>
 
 
-  <%= form_for @homework, html: {multipart: true } do |f| %>
+  <%= form_for @homework, url: homework_path(admin_id: session[:user_id]), method: :patch, html: {multipart: true } do |f| %>
     <% if @homework.errors.any? %>
     <div id="error_explanation">
       <p>

@@ -26,6 +26,7 @@
   <button type="button" id="homework_popup_button">Upload some homework?</button>
 </p><br>
 
+<div>
 
   <%= form_for @homework, html: { multipart: true, id: 'upload_homework' } do |f| %>
     <% if @homework.errors.any? %>
@@ -62,7 +63,6 @@
       <%= f.submit %>
     </p>
   <% end %>
-</p>
 
 
 <br><p><%= link_to 'EDIT', edit_assignment_path(@assignment) %></p>

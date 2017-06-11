@@ -23,10 +23,11 @@
 </p>
 
 <p>
-</p>
+  <button type="button" id="homework_popup_button">Upload some homework?</button>
+</p><br>
 
 
-  <%= form_for @homework, url: homework_path(admin_id: session[:user_id]), method: :patch, html: {multipart: true } do |f| %>
+  <%= form_for @homework, html: { multipart: true, id: 'upload_homework' } do |f| %>
     <% if @homework.errors.any? %>
     <div id="error_explanation">
       <p>
@@ -53,7 +54,7 @@
 
     <p>
       <%= f.label :document %>
-      <%= f.file_field :document %>
+      <p><%= f.file_field :document %></p>
     </p>
 
     <p>
@@ -75,5 +76,7 @@
   <p><%= link_to "STUDENT INDEX", admins_path %></p>
   <p><%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
 <% end %>
+
+
 
 </center>

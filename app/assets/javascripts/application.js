@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+ $('#upload_homework').hide(); //Initially form wil be hidden.
+
+  $('#homework_popup_button').click(function() {
+   $('#upload_homework').toggle("fast");//Form shows on button click
+
+   });
+ });

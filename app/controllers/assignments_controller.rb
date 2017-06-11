@@ -16,6 +16,7 @@
       #   @assignment.students = Student.where(id: params[:user_id])
       # end
       @assignments = Assignment.all
+      # @assignments = Assignment.all(:include => :students, :conditions => ["student.id = ?", session[:user_id]])
       # @students = @assignments.student_ids
       # @user = Admin.where(admin_id: session[:user_id]) || @user = Student.where(student_id: session[:user_id])
     end

@@ -1,12 +1,15 @@
 <center>
   <div id='top-nav'>
-    <br>
-    <p>Hey, all.</p>
-    <p>Hi, <%= session[:user_name] %>. </p>
-    <% if current_user.avatar.blank? %>
-      <p>Update your avatar! <%= link_to "MY PROFILE", student_path(current_user) %></p>
-    <% else %>
-      <p><%= image_tag current_user.avatar.url(:thumb) %></p>
-    <% end %>
+    <div id='nav-left'>
+      <p>Hey, all.</p>
+      <p>Hi, <%= session[:user_name] %>. </p>
+    </div>
+    <div id='nav-right'>
+      <% if current_user.avatar.blank? %>
+        <p>Update your avatar! </p><p><%= link_to "MY PROFILE", student_path(current_user) %></p>
+      <% else %>
+        <p><%= image_tag current_user.avatar.url(:thumb) %></p>
+      <% end %>
+    </div>
   </div>
 </center>

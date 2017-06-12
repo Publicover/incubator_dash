@@ -17,8 +17,13 @@
  body {
    /*background-color: green;*/
    /*font-family: Arial;*/
-   font-family: 'Aller';
+   /*font-family: Consolas, "Courier New", Monospace;*/
+   /*font-family: Avenir;*/
+   /*font-family: Verdana, Geneva, sans-serif;*/
+   /*font-family: "Trebuchet MS", Helvetica, sans-serif;*/
+   font-family: Tahoma, Geneva, sans-serif;
    font-size: 0.95em;
+   /*padding: 2em;*/
  }
 
  table {
@@ -47,6 +52,15 @@
  th {
    background: #D7DBDD;
  }
+
+ /*.grid {*/
+   /*display: flex;*/
+   /*justify-content: space-between;*/
+ /*}*/
+
+ /*.container {*/
+   /*flex-flow: row nowrap;*/
+ /*}*/
 
  /*@font-face {*/
   /*font-family: 'Aller';*/
@@ -82,5 +96,23 @@
 /*}*/
 
 #top-nav {
-  background-color: blue;
+  display: flex;
+  /*width: 100%;*/
+  background: lightblue;
+  padding: 10px;
+}
+
+#nav-left {
+  /*width: 15%;*/
+  /*height: 100px;*/
+  /*float: left;*/
+  flex: 0 0 85%;
+  border: 1px solid gray;
+}
+
+#nav-right {
+  /*margin-left: 15%;*/
+  /*height: 100px;*/
+  flex: 1;
+  border: 1px solid gray;
 }

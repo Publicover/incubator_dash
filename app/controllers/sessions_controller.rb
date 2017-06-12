@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
+  before_action :disable_nav
 
   def new
-    @disable_nav = true
+    # @disable_nav = true
   end
 
   def create
-    @disable_nav = true
+    # @disable_nav = true
     user = Admin.find_by_email(params[:email]) || user = Student.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
@@ -20,11 +21,17 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @disable_nav = true
+    # @disable_nav = true
     session[:user_id] = nil
     session[:user_flavor] = nil
     session[:user_name] = nil
     redirect_to login_path, notice: "You have logged out."
   end
+
+  private
+
+    def disable_nav
+      @disable_nav = true
+    end
 
 end

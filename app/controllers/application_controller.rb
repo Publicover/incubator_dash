@@ -14,8 +14,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, notice: "NOPE NOPE NOPE--DON'T HAVE CREDENTIALS" unless session[:user_flavor] == "student" || session[:user_flavor] == "admin"
   end
 
+  private
+
   def current_user
-    @current_user ||= (Admin.find(session[:user_id]) || Student.find(session[:user_id]))
+    if session[:user_flavor] == "admin"
+      @current_user ||= Admin.find(session[:user_id])
+    else
+      @current_user ||= Student.find(session[:user_id])
+    end
   end
 
 end

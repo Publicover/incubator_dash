@@ -69,9 +69,9 @@ class StudentsController < ApplicationController
 
     def set_student
       @student = Student.find(params[:id])
-      unless @student.admin_id == session[:user_id]
-        redirect_to root_path
-      end
+      # unless @student.admin_id == session[:user_id]
+      #   redirect_to root_path
+      # end
     end
 
     def student_params

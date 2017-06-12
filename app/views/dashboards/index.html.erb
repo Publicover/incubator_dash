@@ -2,7 +2,7 @@
 <p>Find me in app/views/dashboards/index.html.erb</p>
 
 <h1> Welcome, session[:user_name]: <%= session[:user_name] %> </h1>
-<h2> Or is it 'Welcome, @current_user': <%= current_user.name %></h2>
+<h2> Or is it 'Welcome, current_user.name': <%= current_user.name %></h2>
 <%= image_tag current_user.avatar.url(:thumb) %>
 <h1> session[:user_id]: <%= session[:user_id] %></h1>
 <h1> session[:user_flavor]: <%= session[:user_flavor] %></h1>

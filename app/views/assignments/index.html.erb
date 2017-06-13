@@ -28,7 +28,9 @@
         <td><%= assignment.completed %></td>
 
         <td><% assignment.homeworks.each do |homework| %>
-          <br> <%= image_tag homework.document.url(:thumb) %>
+          <!-- <br> <%= image_tag homework.document.url(:thumb) %> -->
+          <p><%= homework.student.name %>
+          <%= link_to "#{homework.title} homework", homework.document.url(:original, false) %></p>
           <% end %> </td>
 
 

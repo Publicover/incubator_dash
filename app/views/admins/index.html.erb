@@ -36,7 +36,8 @@
             <br> <%= assignment.completed %>
           <% end %> </td>
           <td><% student.homeworks.each do |homework| %>
-            <br> <%= image_tag homework.document.url(:thumb) %>
+            <!-- <br> <%= homework.title %>, <%= homework.document_file_name %> -->
+            <br> <%= link_to "#{homework.title} homework", homework.document.url(:original, false) %>
           <% end %> </td>
           <td><%= link_to 'SHOW', student_path(student) %></td>
           <td><%= link_to 'EDIT', edit_student_path(student) %></td>

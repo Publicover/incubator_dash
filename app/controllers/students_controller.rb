@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
     # @students = Admin.where(id: session[:user_id]) || @students = Student.where(id: session[:user_id])
     @students = Student.where(id: session[:user_id])
     @assignments = Assignment.where(student_id: session[:user_id])
+    @homeworks = Homework.where(student_id: session[:user_id])
 
     # respond_to do |format|
     #   format.html

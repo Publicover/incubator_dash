@@ -51,7 +51,11 @@
       @assignment = Assignment.new(assignment_params)
 
       if @assignment.save
-        redirect_to @assignment
+        if session[:user_flavor] == "admin"
+          redirect_to @assignment
+        else
+          redirect_to students_path
+        end
       else
         render 'new'
       end

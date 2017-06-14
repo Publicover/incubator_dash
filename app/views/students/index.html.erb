@@ -21,6 +21,7 @@
       <th>Your Assignments</th>
       <th>Due:</th>
       <th>Completed?</th>
+      <th>TEST</th>
       <!-- <th colspan="3"></th> -->
     </tr>
   </thead>
@@ -44,6 +45,14 @@
         <td><% student.assignments.each do |assignment| %>
           <br><%= assignment.completed %>
         <% end %> </td>
+        <td><% student.homeworks.each do |homework| %>
+        <% if homework.document.exists? %>
+            <br><%= homework.title %> homework complete!
+          <% else %>
+            <br><%= homework.title %> homework not done yet
+            <!-- <%= link_to "hand it in", assignment_path(homework.assignment_id) %> -->
+          <% end %>
+        <% end %></td>
       </tr>
     <% end %>
   </tbody>

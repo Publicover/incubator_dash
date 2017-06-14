@@ -1,4 +1,5 @@
 class HomeworksController < ApplicationController
+  # before_action :set_homework
   # before_action :logged_in_as_admin?
   before_action :logged_in_as_student?
 
@@ -54,6 +55,14 @@ class HomeworksController < ApplicationController
   end
 
   private
+
+    def set_homework
+      @homework = Homework.find(params[:id])
+      # unless @assignment.student_id == session[:user_id]
+      # unless @assignment.student_ids.include?(session[:user_id])
+      #   redirect_to root_path
+      # end
+    end
 
     def homework_params
       params.require(:homework).permit(:title, :student_id, :assignment_id, :document)

@@ -15,6 +15,7 @@
       <th>Due Date</th>
       <th>Completed</th>
       <th>Homework</th>
+      <th>Test</th>
 
     </tr>
   </thead>
@@ -33,6 +34,8 @@
           <%= link_to "#{homework.title} homework", homework.document.url(:original, false) %></p>
           <% end %> </td>
 
+        <td> <%= assignment.homeworks.last %></td>
+        <!-- <td> test here </td> -->
 
         <% if session[:user_flavor] == "admin" %>
           <td><%= link_to 'SHOW', assignment_path(assignment) %></td>

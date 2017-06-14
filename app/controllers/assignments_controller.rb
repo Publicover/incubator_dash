@@ -25,7 +25,14 @@
       @assignment = Assignment.find(params[:id])
       # @students = Student.where(admin_id: session[:user_id])
       # @homework = Homework.where(assignment_id: session[:user_id])
-      @homework = Homework.new
+      # if Homework.find(params[:id]).exist?
+      #   @homework = Homework.find(params[:id])
+      # else
+      #   @homework = Homework.new
+      # end
+      # @homework = Homework.new
+      @homework = Homework.find_or_create_by(assignment_id: Assignment.find(params[:id]), student_id: current_user.id)
+      # @homework = Homework.find(params[:id]) || @homework = Homework.new
       # respond_to do |format|
       #   format.html {redirect_to "show" }
       #   # format.js

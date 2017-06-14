@@ -27,3 +27,19 @@ $(document).on('turbolinks:load', function()  {
 
    });
  });
+
+ // $(document).on('turbolinks:load', function() {
+
+  // $(window).scroll(function () {
+      //if you hard code, then use console
+      //.log to determine when you want the
+      //nav bar to stick.
+      // console.log($(window).scrollTop())
+    // if ($(window).scrollTop() > 2 ) {
+      // $('#top-nav').addClass('navbar-fixed');
+    // }
+    // if ($(window).scrollTop() < 2 ) {
+      // $('#top-nav').removeClass('navbar-fixed');
+    // }
+  // });
+// });

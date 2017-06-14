@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :students
 
+  # resources :assignments do
+  #   resources :homeworks
+  # end
+
   resources :assignments
 
   resources :homeworks

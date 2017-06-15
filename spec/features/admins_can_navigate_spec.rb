@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Admin navigation" do
 
-  before :all do
+  before do
     Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
     visit '/'
     expect(page).to have_text("You must log in to access this page")

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Admin login" do
 
-  before :each do
+  before do
     Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
   end
 

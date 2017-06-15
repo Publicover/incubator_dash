@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Student avatar" do
 
-  before :all do
+  before do
     @student = Student.create(name: "jill", email: "jill@jill.com", password: "password", flavor: "student", admin_id: 1)
     visit '/'
     expect(page).to have_text("You must log in to access this page")
@@ -15,7 +15,7 @@ RSpec.describe "Student avatar" do
   it "should upload without trouble" do
     visit '/'
     expect(page).to have_content('View Profile:')
-    click_link "MY PROFILE"
+    click_link "USER PROFILE"
     # follow_redirect!
     click_link "EDIT"
     # click_button("student_avatar")

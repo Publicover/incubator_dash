@@ -15,7 +15,7 @@
  */
 
  body {
-   /*background-color: green;*/
+   /*background-color: lightgreen;*/
    /*font-family: Arial;*/
    /*font-family: Consolas, "Courier New", Monospace;*/
    /*font-family: Avenir;*/
@@ -26,11 +26,6 @@
    padding: 10px;
    /*padding: 2em;*/
  }
-
- /*div {*/
-   /*position: relative;*/
-   /*overflow: hidden;*/
- /*}*/
 
  table {
    border-collapse: collapse;
@@ -87,11 +82,6 @@
   /*font-family: 'Aller';*/
 /*}*/
 
-#notice {
-  color: red;
-  background-color: white;
-}
-
 /*#my-avatar {*/
   /*border: black;*/
   /*border-radius: 50%;*/
@@ -100,6 +90,11 @@
 /*.table {*/
   /*border: 1px;*/
 /*}*/
+
+#notice {
+  color: red;
+  background-color: white;
+}
 
 #top-nav {
   display: flex;
@@ -116,6 +111,7 @@
   /*width: 15%;*/
   /*height: 100px;*/
   /*float: left;*/
+      /* Three values: flex-grow | flex-shrink | flex-basis */
   flex: 0 0 85%;
   border: 1px solid gray;
 }
@@ -127,11 +123,60 @@
   border: 1px solid gray;
 }
 
-/*div {*/
-  /*position: relative;*/
+/*.flex-grid {*/
+  /*display: flex;*/
+  /*justify-content: space-around;*/
+  /*margin: 0 0 20px 0;*/
+/*}*/
+/*.flex-grid .col {*/
+  /*flex: 1;*/
+/*}*/
+/*.flex-grid-half {*/
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+/*}*/
+/*.flex-grid-half .col {*/
+  /*width: 50%;*/
+/*}*/
+/*.flex-grid-thirds {*/
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+/*}*/
+/*.flex-grid-thirds .col {*/
+  /*width: 32%;*/
+/*}*/
+/** {*/
+  /*box-sizing: border-box;*/
+/*}*/
+/*.col {*/
+  /*border: 1px solid black;*/
+  /*background: lightgray;*/
+  /*padding: 20px;*/
+/*}*/
+/*@media (max-width: 400px) {*/
+  /*.flex-grid,*/
+  /*.flex-grid-thirds {*/
+    /*display: block;*/
+    /*.col {*/
+      /*width: 100%;*/
+      /*margin: 0 0 10px 0;*/
+    /*}*/
+  /*}*/
+/*}*/
+/*.flex-grid-quarter .col {*/
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+/*}*/
+/*.flex-grid-quarter .col {*/
+  /*width: 25%;*/
 /*}*/
 
-/*#body-div {*/
-  /*padding 2px;*/
-  /*float: none;*/
+
+
+
+/*body {*/
+  /*padding: 20px;*/
+/*}*/
+/*.flex-grid {*/
+  /*margin: 0 0 20px 0;*/
 /*}*/

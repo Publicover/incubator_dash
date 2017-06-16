@@ -2,19 +2,14 @@ class Homework < ApplicationRecord
   belongs_to :student
   belongs_to :assignment
   validates :title, :student_id, :assignment_id, presence: true
-  has_attached_file :document, styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :document
   validates_attachment_content_type :document,
     content_type: [
       "image/jpeg",
       "application/pdf",
-      "file/txt",
       "text/plain",
-      "application/doc",
-      "application/docx",
-      "application/msword",
-      "application/vnd.ms-excel",
-      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "application/vnd.ms-powerpoint"
+      "application/zip",
+      "application/vnd.ms-excel"
     ],
     message: "invalid attached file type"
   # after_save :set_name

@@ -3,10 +3,14 @@ require 'rails_helper'
 RSpec.describe "Student homework" do
 
   before do
-    new_student = Student.create(name: "jill", email: "jill@jill.com", password: "password", flavor: "student", admin_id: 1)
-    new_admin = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
-    new_assignment = Assignment.create(title: "Bio", description: "Write a bio", due_date: Date.new(2017-1-1))
-    new_homework = Homework.create(title: "cool file", student_id: 1, assignment_id: 1)
+    new_student = Student.create(name: "jill", email: "jill@jill.com",
+      password: "password", flavor: "student", admin_id: 1)
+    new_admin = Admin.create(name: "jim", email: "jim@jim.com",
+      password: "password", flavor: "admin")
+    new_assignment = Assignment.create(title: "Bio", description: "Write a bio",
+      due_date: Date.new(2017-1-1))
+    new_homework = Homework.create(title: "cool file", student_id: 1,
+      assignment_id: 1)
     visit '/'
     expect(page).to have_text("You must log in to access this page")
     fill_in 'Email', with: 'jill@jill.com'
@@ -37,7 +41,8 @@ RSpec.describe "Student homework" do
     # click_link "Bio"
     # expect(page).to have_text("Assignments#show")
     click_button "Upload some homework?"
-    attach_file("homework[document]", Rails.root.join('spec', 'fixtures', 'jennifer_connelly.jpg'))
+    attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
+      'jennifer_connelly.jpg'))
     click_button "Update Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'jennifer_connelly.jpg')]")
@@ -50,7 +55,8 @@ RSpec.describe "Student homework" do
     visit '/assignments/1'
     expect(page).to have_text("Assignments#show")
     click_button "Upload some homework?"
-    attach_file("homework[document]", Rails.root.join('spec', 'fixtures', 'example.pdf'))
+    attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
+      'example.pdf'))
     click_button "Update Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'example.pdf')]")
@@ -62,7 +68,8 @@ RSpec.describe "Student homework" do
     visit '/assignments/1'
     expect(page).to have_text("Assignments#show")
     click_button "Upload some homework?"
-    attach_file("homework[document]", Rails.root.join('spec', 'fixtures', 'example.txt'))
+    attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
+      'example.txt'))
     click_button "Update Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'example.txt')]")
@@ -74,7 +81,8 @@ RSpec.describe "Student homework" do
     visit '/assignments/1'
     expect(page).to have_text("Assignments#show")
     click_button "Upload some homework?"
-    attach_file("homework[document]", Rails.root.join('spec', 'fixtures', 'example.docx'))
+    attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
+      'example.docx'))
     click_button "Update Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'example.docx')]")
@@ -86,7 +94,8 @@ RSpec.describe "Student homework" do
     visit '/assignments/1'
     expect(page).to have_text("Assignments#show")
     click_button "Upload some homework?"
-    attach_file("homework[document]", Rails.root.join('spec', 'fixtures', 'example.xlsx'))
+    attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
+      'example.xlsx'))
     click_button "Update Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'example.xlsx')]")

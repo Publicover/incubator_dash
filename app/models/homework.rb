@@ -15,6 +15,6 @@ class Homework < ApplicationRecord
   # after_save :set_name
 
   # def set_name
-  #   self.update title: document_file_name.sub(/\.[^.]+\z/, '').titleize
+    # self.update(title: "document_one")
   # end
 end

@@ -15,7 +15,6 @@
       <th>Due Date</th>
       <th>Completed</th>
       <th>Homework</th>
-      <th>Test</th>
 
     </tr>
   </thead>
@@ -28,13 +27,7 @@
         <td><%= assignment.due_date.strftime("%b %e, %Y") %></td>
         <td><%= assignment.completed %></td>
 
-        <td><% assignment.homeworks.each do |homework| %>
-          <!-- <br> <%= image_tag homework.document.url(:thumb) %> -->
-          <p><%= homework.student.name %>
-          <%= link_to "#{homework.title} homework", homework.document.url(:original, false) %></p>
-          <% end %> </td>
 
-        <td> <%= assignment.homeworks.last %></td>
         <!-- <td> test here </td> -->
 
         <% if session[:user_flavor] == "admin" %>

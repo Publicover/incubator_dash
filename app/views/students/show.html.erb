@@ -31,7 +31,8 @@
   <% @student.homeworks.each do |homework| %>
     <p> <%= homework.title %> </p>
     <p> <% if homework.document_file_name.include?(".pdf") %>
-          PDF HERE
+          <%= image_tag("pdf_icon35.png") %>
+          <!-- PDF FILE IMAGE HERE GO GO GO  -->
         <% else %>
           <%= image_tag homework.document.url(:thumb) %>
         <% end %></p>

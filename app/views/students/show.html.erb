@@ -7,23 +7,24 @@
 
 <br>
 
-<p>
-  <strong>Email:</strong>
-  <p><%= @student.email %></p>
-</p>
+<!-- <p> -->
+  <!-- <strong>Email:</strong> -->
+  <!-- <p><%= @student.email %></p> -->
+<!-- </p> -->
 
-<p>
-  <strong>Assignments:</strong>
-  <% @student.assignments.each do |item| %>
-    <p> <%= item.title %> </p>
-  <% end %>
-</p>
+<!-- <p> -->
+  <!-- <strong>Assignments:</strong> -->
+  <!-- <% @student.assignments.each do |item| %> -->
+    <!-- <p> <%= item.title %> </p> -->
+  <!-- <% end %> -->
+<!-- </p> -->
 
 <p>
   <strong>Avatar!</strong><br>
   <%= image_tag @student.avatar.url(:thumb) %>
   <!-- <%= image_tag @student.avatar.url(:medium) %> -->
   <!-- <%= image_tag @student.avatar %> -->
+  <p><%= link_to "Update avatar", change_avatar_student_path(current_user) %></p>
 </p>
 
 <p>

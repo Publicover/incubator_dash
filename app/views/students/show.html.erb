@@ -31,12 +31,12 @@
 <div class="homework-blocks">
   <% @student.homeworks.each do |homework| %>
   <div class="inside-homework">
-    <p><%= homework.title %> </p>
+    <p><%= link_to "#{homework.title}", homework_path(homework) %> </p>
     <% unless homework.document_file_name.nil? %>
       <% type = homework.document_file_name.split(".")[-1] %>
       <% if homework.document_file_name.include?(type) %>
-        <%= link_to homework_path(homework) do %>
-        <%= image_tag("#{type}_icon50.png") %>
+        <%= link_to homework.document.url(:original, false) do %>
+          <%= image_tag("#{type}_icon50.png") %>
         <% end %>
       <% else %>
         <%= image_tag homework.document.url(:thumb) %>

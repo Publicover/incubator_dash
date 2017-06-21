@@ -14,4 +14,8 @@ RSpec.describe "Renamed routes" do
     expect(:delete => '/logout').to route_to(:controller => "sessions", :action => "destroy")
   end
 
+  it "gets /change_avatar" do
+    expect(:get => '/students/:id/change_avatar').to route_to(:controller => "students", :action => "change_avatar", :id =>":id")
+  end
+
 end

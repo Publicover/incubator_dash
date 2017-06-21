@@ -66,6 +66,16 @@ class StudentsController < ApplicationController
     redirect_to root_path
   end
 
+  def change_avatar
+    @student = Student.find(params[:id])
+    #
+    # if @student.update(student_params)
+    #   redirect_to @student
+    # else
+    #   render 'edit'
+    # end
+  end
+
   private
 
     def set_student

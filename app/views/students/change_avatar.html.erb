@@ -1,0 +1,30 @@
+<h1>Students#change_avatar</h1>
+<p> Glad you made it, developer.</p>
+
+<center>
+<%= form_for @student, html: { multipart: true } do |f| %>
+
+  <% if @student.errors.any? %>
+
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@student.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><center><%= msg %></li>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <p>
+    <%= f.label :avatar%><br>
+    <%= f.file_field :avatar %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

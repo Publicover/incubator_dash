@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resources :admins
 
-  resources :students
+  resources :students do
+    member do
+      get "change_avatar"
+    end
+  end
 
   # resources :assignments do
   #   resources :homeworks

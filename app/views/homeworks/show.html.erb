@@ -10,7 +10,14 @@
   <p><%= @homework.title %></p>
 </p>
 
-<%= image_tag @homework.document.url(:thumb) %>
+<% unless @homework.document_file_name.nil? %>
+  <% type = @homework.document_file_name.split(".")[-1] %>
+  <% if type == "pdf" || type == "docx" || type == "xlsx" || type == "jpeg" || type == "jpg" %>
+    <%= image_tag("#{type}_icon50.png") %>
+  <% else %>
+    UPLOADED FILE
+  <% end %>
+<% end%>
 
 <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
 <p>Go back to assignments: <%= link_to 'ASSIGNMENTS', students_path %></p>

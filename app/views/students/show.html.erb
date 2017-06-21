@@ -29,15 +29,13 @@
 <p>
   <strong>Homework</strong>
   <% @student.homeworks.each do |homework| %>
-    <p> <%= homework.title %> </p>
-
-        <% type = homework.document_file_name.split(".")[-1] %>
-    <p> <% if homework.document_file_name.include?(".pdf") || homework.document_file_name.include?(".docx")%>
-          <%= image_tag("#{type}_icon50.png") %>
-        <% else %>
-          <%= image_tag homework.document.url(:thumb) %>
-        <% end %></p>
-
+     <p><%= homework.title %> </p>
+      <% type = homework.document_file_name.split(".")[-1] %>
+     <% if homework.document_file_name.include?(".pdf") || homework.document_file_name.include?(".docx") || homework.document_file_name.include?(".jpg")%>
+        <%= image_tag("#{type}_icon50.png") %>
+      <% else %>
+        <%= image_tag homework.document.url(:thumb) %>
+      <% end %>
   <% end %>
 </p>
 

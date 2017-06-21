@@ -30,7 +30,11 @@
   <strong>Homework</strong>
   <% @student.homeworks.each do |homework| %>
     <p> <%= homework.title %> </p>
-    <p> <%= image_tag homework.document.url(:thumb) %> </p>
+    <p> <% if homework.document_file_name.include?(".pdf") %>
+          PDF HERE
+        <% else %>
+          <%= image_tag homework.document.url(:thumb) %>
+        <% end %></p>
   <% end %>
 </p>
 
@@ -47,5 +51,26 @@
 <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
 <%= link_to "STUDENT INDEX", admins_path %><br>
 <%= link_to "MAKE A NEW STUDENT", new_student_path %>
+<p><%= link_to 'Logout', logout_path, method: :delete %></p>
+
+<br>
+<p>Dashboard: <%= link_to "FRONT PAGE", root_path %></p>
+<% if session[:user_flavor] == "admin" %>
+  <p>View Students: <%= link_to 'STUDENTS', admins_path %></p>
+  <p>View Profile: <%= link_to 'USER PROFILE', admin_path(session[:user_id]) %></p>
+<% else %>
+  <p>View Profile: <%= link_to 'USER PROFILE', student_path(session[:user_id]) %></p>
+  <p>View Assignments: <%= link_to 'ASSIGNMENTS', students_path %></p>
+<% end %>
+<p>Change Avatar:<%= link_to 'AVATAR', change_avatar_student_path(session[:user_id]) %> </p>
+
+<% if session[:user_flavor] == "admin" %>
+  <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p>
+  <p>View assignments: <%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
+  <p>Make a new assignment: <%= link_to 'NEW ASSIGNMENTS', new_assignment_path %></p>
+  <p>See your uploaded files: <%= link_to 'ALL HOMEWORK', homeworks_path %></p>
+  <p>Upload some homework: <%= link_to 'NEW HOMEWORK', new_homework_path %></p>
+  <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
+<% end %>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
 </center>

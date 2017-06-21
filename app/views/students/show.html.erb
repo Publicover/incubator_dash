@@ -28,18 +28,24 @@
 
 <p>
   <strong>Homework</strong>
+<div class="homework-blocks">
   <% @student.homeworks.each do |homework| %>
+  <div class="inside-homework">
     <p><%= homework.title %> </p>
     <% unless homework.document_file_name.nil? %>
       <% type = homework.document_file_name.split(".")[-1] %>
       <% if homework.document_file_name.include?(type) %>
+        <%= link_to homework_path(homework) do %>
         <%= image_tag("#{type}_icon50.png") %>
+        <% end %>
       <% else %>
         <%= image_tag homework.document.url(:thumb) %>
       <% end %>
     <% end%>
+    </div>
   <% end %>
-</p>
+</div>
+
 
 <table>
   <tbody>

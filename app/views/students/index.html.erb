@@ -48,7 +48,7 @@
         <% end %> </td>
         <td><% student.homeworks.each do |homework| %>
         <% if homework.document.exists? %>
-            <br><%= homework.title %> homework complete!
+            <br><%= homework.title %> complete!
           <% else %>
             <br><%= homework.title %> homework not done yet
             <!-- <%= link_to "hand it in", assignment_path(homework.assignment_id) %> -->

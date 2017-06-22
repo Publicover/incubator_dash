@@ -1,3 +1,11 @@
+/* line 11, /Users/jimpublicover/Desktop/incubator_dash/app/assets/stylesheets/sessions.scss */
+#signin-box {
+  background-color: #FF0060;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  max-width: 100%;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +18,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
  body {
    /*background-color: lightgreen;*/
@@ -28,16 +37,6 @@
    /*padding: 10px;*/
    /*padding: 2em;*/
 
- }
-
- ::-moz-selection {
-    color: white;
-    background-color: #FF0060;
-}
-
- ::selection {
-   color: white;
-   background-color: #FF0060;
  }
 
  table {

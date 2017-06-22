@@ -14,6 +14,16 @@
  *= require_self
  */
 
+ ::-moz-selection {
+    color: white;
+    background-color: #FF0060;
+ }
+
+ ::selection {
+   color: white;
+   background-color: #FF0060;
+ }
+
  body {
    /*background-color: lightgreen;*/
    /*font-family: Arial;*/
@@ -27,17 +37,6 @@
    /*background-color: #2E2E2E;*/
    /*padding: 10px;*/
    /*padding: 2em;*/
-
- }
-
- ::-moz-selection {
-    color: white;
-    background-color: #FF0060;
-}
-
- ::selection {
-   color: white;
-   background-color: #FF0060;
  }
 
  table {
@@ -78,7 +77,6 @@
  input {
    border-radius: 2px;
    padding: 3px;
-
  }
 
  .pink-btn {
@@ -92,6 +90,72 @@
    color: white;
    font-size: 1em;
  }
+
+ #notice {
+   color: #FF0060;
+   background-color: white;
+ }
+
+ #top-nav {
+   display: flex;
+   /*width: 100%;*/
+   background: white;
+   padding: 10px;
+   top: 0;
+   z-index: 100;
+   /*position: fixed;*/
+   width: 100%;
+   border: 1px solid black;
+ }
+
+ #nav-left {
+   /*width: 15%;*/
+   /*height: 100px;*/
+   /*float: left;*/
+   /* Three values: flex-grow | flex-shrink | flex-basis */
+   flex: 0 0 75%;
+   /*border: 1px solid gray;*/
+   /*justify: left;*/
+   text-align: left;
+ }
+
+ .room-on-top {
+   margin-top: 7px;
+ }
+
+ .centered-label {
+   display: block;
+ }
+
+ #nav-right {
+   /*margin-left: 15%;*/
+   /*height: 100px;*/
+   flex: 1;
+   /*border: 1px solid gray;*/
+   vertical-align: top;
+    display: inline-block;
+    text-align: center;
+ }
+
+ .homework-blocks {
+   background-color: lightgray;
+ }
+
+ .inside-homework {
+   padding: 5px;
+   border: 1px solid black;
+   margin: 5px;
+   background-color: white;
+   display: inline-block;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: 'Montserrat', 'sans-serif';
+ }
+
+ /*.pull-left {*/
+
+ /*}*/
 
  /*input {*/
    /*box-shadow: 1px 0px 5px inset;*/
@@ -116,37 +180,7 @@
   /*border: 1px;*/
 /*}*/
 
-#notice {
-  color: #FF0060;
-  background-color: white;
-}
 
-#top-nav {
-  display: flex;
-  /*width: 100%;*/
-  background: lightblue;
-  padding: 10px;
-  top: 0;
-  z-index: 100;
-  /*position: fixed;*/
-  width: 100%;
-}
-
-#nav-left {
-  /*width: 15%;*/
-  /*height: 100px;*/
-  /*float: left;*/
-      /* Three values: flex-grow | flex-shrink | flex-basis */
-  flex: 0 0 85%;
-  border: 1px solid gray;
-}
-
-#nav-right {
-  /*margin-left: 15%;*/
-  /*height: 100px;*/
-  flex: 1;
-  border: 1px solid gray;
-}
 
 /*.flex-grid {*/
   /*display: flex;*/
@@ -206,21 +240,7 @@
   /*margin: 0 0 20px 0;*/
 /*}*/
 
-.homework-blocks {
-  background-color: lightgray;
-}
 
-.inside-homework {
-  padding: 5px;
-  border: 1px solid black;
-  margin: 5px;
-  background-color: white;
-  display: inline-block;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', 'sans-serif';
-}
 
 /*p, input {*/
   /*font-family: 'Spectral', serif;*/

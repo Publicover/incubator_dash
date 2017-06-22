@@ -3,7 +3,7 @@ class Admin < ApplicationRecord
   validates :name, presence: true
   has_many :students
   has_attached_file :avatar,
-    styles: { medium: "300x300>", thumb: "100x100>" },
+    styles: { medium: "300x300>", thumb: "100x100>", tiny: '47x47>' },
     default_url: "/images/:style/default.png",
     # default_url: "/images/default_avatar_silhoutte.png",
     allow_nil: true

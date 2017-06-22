@@ -1,15 +1,15 @@
 <center>
   <div id='top-nav'>
     <div id='nav-left'>
-      <p>Hey, all.</p>
-      <p>Hi, <%= session[:user_name] %>. </p>
+      <%= image_tag("logo_mark_small.png", :class => 'pull-left')  %>
     </div>
     <div id='nav-right'>
-      <% if current_user.avatar.blank? %>
-        <p>Update your avatar! </p><p><%= link_to "MY PROFILE", student_path(current_user) %></p>
-      <% else %>
-        <p><%= image_tag current_user.avatar.url(:thumb) %></p>
-      <% end %>
+      <%= image_tag current_user.avatar.url(:tiny), :class => "img-circle room-on-top" %>
+      <span class="centered-label">
+        <% if current_user.avatar.blank? %>
+          <%= link_to "Update profile", student_path(current_user) %>
+        <% end %>
+      </span>
     </div>
   </div>
 </center>

@@ -3,13 +3,20 @@
     <div id='nav-left'>
       <%= image_tag("logo_mark_small.png", :class => 'pull-left')  %>
     </div>
-    <div id='nav-right'>
+    <div id='nav-middle'>
+
+        <%= link_to "Home", root_path %> | <%= link_to "Assignments", students_path %> |
+        <%= link_to "Profile", students_path(current_user.id) %> |
+        <%= link_to "Avatar update", change_avatar_student_path(current_user.id) %> |
+        <%= link_to 'Logout', logout_path, method: :delete %> |
+        <!-- <%= image_tag current_user.avatar.url(:tiny), :class => "img-circle room-on-top" %> -->
+
+      <!-- <% if current_user.avatar.blank? %> -->
+        <!-- <%= link_to "Update profile", student_path(current_user) %> -->
+      <!-- <% end %> -->
+    </div>
+    <div>
       <%= image_tag current_user.avatar.url(:tiny), :class => "img-circle room-on-top" %>
-      <span class="centered-label">
-        <% if current_user.avatar.blank? %>
-          <%= link_to "Update avatar", change_avatar_student_path(current_user) %>
-        <% end %>
-      </span>
     </div>
   </div>
 </center>

@@ -8,7 +8,7 @@ RSpec.describe "Student avatar" do
     expect(page).to have_text("You must log in to access this page")
     fill_in 'Email', with: 'jill@jill.com'
     fill_in 'Password', with: 'password'
-    click_button 'Save changes'
+    click_button 'Log in'
     expect(page).to have_text("You have logged in.")
   end
 

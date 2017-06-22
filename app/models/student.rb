@@ -4,7 +4,7 @@ class Student < ApplicationRecord
   has_and_belongs_to_many :assignments
   has_many :homeworks
   has_attached_file :avatar,
-    styles: { medium: "300x300>", thumb: "100x100#" },
+    styles: { medium: "300x300>", thumb: "100x100#", tiny: "45x45#" },
     default_url: "/images/:style/default.png",
     allow_nil: true
   validates_attachment_content_type :avatar, content_type: /\Aimage\//

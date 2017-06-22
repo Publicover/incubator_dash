@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Student avatar" do
+RSpec.describe "dashboard index" do
 
   before do
     new_student = Student.create(name: "jill", email: "jill@jill.com",
@@ -19,14 +19,11 @@ RSpec.describe "Student avatar" do
     expect(page).to have_text("You have logged in.")
   end
 
-  it "allows updates" do
-    click_link "AVATAR"
-    expect(page).to have_text("Students#change_avatar")
-    attach_file("student[avatar]", Rails.root.join('spec', 'fixtures',
-      'jennifer_connelly_2.jpg'))
-    click_button "Update Student"
-    expect(page).to have_text("Students#show")
-    expect(page).to have_xpath("//img[contains(@src,'jennifer_connelly_2.jpg')]")
+  it "should get name" do
+    expect(page).to have_text("session[:user_name]: jill")
+    expect(page).to have_text("current_user.name': jill")
+    expect(page).to have_text("session[:user_id]: 1")
+    expect(page).to have_text("session[:user_flavor]: student")
   end
 
 end

@@ -7,7 +7,7 @@
       <%= image_tag current_user.avatar.url(:tiny), :class => "img-circle room-on-top" %>
       <span class="centered-label">
         <% if current_user.avatar.blank? %>
-          <%= link_to "Update profile", student_path(current_user) %>
+          <%= link_to "Update avatar", change_avatar_student_path(current_user) %>
         <% end %>
       </span>
     </div>

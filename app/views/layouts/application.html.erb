@@ -19,5 +19,7 @@
     <p id="alert"><%= alert %></p>
 
     <%= yield %>
+
+    <%= render 'partials/footer' unless @disable_nav %>
   </body>
 </html>

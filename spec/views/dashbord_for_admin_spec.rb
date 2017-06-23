@@ -6,8 +6,8 @@ RSpec.describe "dashboard index" do
     new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
     visit '/'
     expect(page).to have_text("You must log in to access this page")
-    fill_in 'Email', with: 'jim@jim.com'
-    fill_in 'Password', with: 'password'
+    fill_in 'email', with: 'jim@jim.com'
+    fill_in 'password', with: 'password'
     click_button 'Log in'
     expect(page).to have_text("You have logged in.")
   end

@@ -11,8 +11,8 @@ RSpec.describe "Student login" do
   it "needs an email" do
     visit '/'
     expect(page).to have_text("You must log in to access this page")
-    fill_in 'Email', with: ' '
-    fill_in 'Password', with: 'password'
+    fill_in 'email', with: ' '
+    fill_in 'password', with: 'password'
     click_button 'Log in'
     expect(page).to have_text("Credentials incorrect.")
   end
@@ -20,8 +20,8 @@ RSpec.describe "Student login" do
   it "needs a password" do
     visit '/'
     expect(page).to have_text("You must log in to access this page")
-    fill_in 'Email', with: 'jill@jill.com'
-    fill_in 'Password', with: ' '
+    fill_in 'email', with: 'jill@jill.com'
+    fill_in 'password', with: ' '
     click_button 'Log in'
     expect(page).to have_text("Credentials incorrect.")
   end
@@ -29,8 +29,8 @@ RSpec.describe "Student login" do
   it "works correctly" do
     visit '/'
     expect(page).to have_text("You must log in to access this page")
-    fill_in 'Email', with: 'jill@jill.com'
-    fill_in 'Password', with: 'password'
+    fill_in 'email', with: 'jill@jill.com'
+    fill_in 'password', with: 'password'
     click_button 'Log in'
     expect(page).to have_text("You have logged in.")
   end

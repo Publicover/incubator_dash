@@ -67,3 +67,22 @@
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
 
 </center>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Due date</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <% @assignments.each do |assignment| %>
+      <tr>
+      <td><%= assignment.title %></td>
+      <td><%= assignment.due_date %></td>
+      <!-- <td><%= assignment.student_ids.document_file_name %></td> -->
+      <% end %>
+    </tr>
+  </tbody>
+</table>

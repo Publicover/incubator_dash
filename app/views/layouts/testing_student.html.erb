@@ -1,0 +1,34 @@
+<head>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<br>
+<center>YOU MADE IT, STUDENT</center>
+<h1>GOOD JOB</h1>
+
+<center>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= "title" %></th>
+      <th><%= "due date" %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <% @assignments.each do |assignment| %>
+      <tr>
+      <td><%= assignment.title %></td>
+      <% if assignment.due_date < DateTime.current %>
+        <td><div class="blue_words"><%= assignment.due_date.strftime("%b %e, %Y") %></div></td>
+      <% else %>
+        <td><div class="green_words"><%= assignment.due_date.strftime("%b %e, %Y") %></div></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</center>
+</body>

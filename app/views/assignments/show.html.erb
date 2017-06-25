@@ -50,17 +50,14 @@
     </p>
   <% end %>
 
-<br><p><%= link_to 'EDIT', edit_assignment_path(@assignment) %></p>
-<p><%= link_to 'DESTROY', assignment_path(@assignment),
-        method: :delete,
-        data: { confirm: 'OK, well, just be careful.' } %></p>
-
 <br>
 <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
 <% if session[:user_flavor] == "admin" %>
   <p><%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
   <p><%= link_to "STUDENT INDEX", admins_path %></p>
   <p><%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
+<% else %>
+  <p><%= link_to "YOUR ASSIGNMENTS", students_path %></p>
 <% end %>
 
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>

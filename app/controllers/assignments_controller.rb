@@ -19,11 +19,11 @@
       # @assignments = Assignment.all(:include => :students, :conditions => ["student.id = ?", session[:user_id]])
       # @students = @assignments.student_ids
       # @user = Admin.where(admin_id: session[:user_id]) || @user = Student.where(student_id: session[:user_id])
-      if session[:user_flavor] == "admin"
-        render :index => 'testing_admin', :layout => 'testing_admin'
-      else
-        render :index => 'testing_student', :layout => 'testing_student'
-      end
+      # if session[:user_flavor] == "admin"
+      #   render :index => 'testing_admin', :layout => 'testing_admin'
+      # else
+      #   render :index => 'testing_student', :layout => 'testing_student'
+      # end
     end
 
     def show

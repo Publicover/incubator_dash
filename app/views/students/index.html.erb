@@ -12,52 +12,39 @@
   <h1>Your Assignments</h1>
 <% end %>
 
+</center>
+<center>
 <table>
-  <caption>students-table</caption>
   <thead>
     <tr>
-      <th>Your Name</th>
-      <th>Your Email</th>
-      <th>Your Admin</th>
-      <th>Your Assignments</th>
-      <th>Due:</th>
-      <th>Completed?</th>
-      <th>TEST</th>
-      <!-- <th colspan="3"></th> -->
+      <th>Title</th>
+      <th>Due date</th>
+      <th>Homework</th>
+      <th>File</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @students.each do |student| %>
+      <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= student.name %></td>
-        <td><%= student.email %></td>
-        <!-- TODO REPLICATE THE BELOW -->
-        <td><%= student.admin.name %></td>
-        <td><% student.assignments.each do |assignment| %>
-              <!-- <%= assignment.title %> -->
-          <!-- <br><%= assignment.title %> -->
-          <%= link_to "#{assignment.title}", assignment_path(assignment) %><br>
-        <% end %> </td>
-        <td><% student.assignments.each do |assignment| %>
-              <!-- <td><%= assignment.due_date.strftime("%b %e, %Y") %></td> -->
-          <br><%= assignment.due_date.strftime("%b %e, %Y") %>
-        <% end %></td>
-        <td><% student.assignments.each do |assignment| %>
-          <br><%= assignment.completed %>
-        <% end %> </td>
-        <td><% student.homeworks.each do |homework| %>
-        <% if homework.document.exists? %>
-            <br><%= homework.title %> complete!
+      <td><%= assignment.title %></td>
+      <td><%= assignment.due_date.strftime("%b %e, %Y") %></td>
+      <td><% assignment.homeworks.each do |homework| %>
+            <%= homework.title %>
+          <% end %></td>
+      <td><% assignment.homeworks.each do |homework| %>
+            <!--  show file name if it is there  -->
+          <% if homework.document_file_name == nil %>
+          NOTHING YET
           <% else %>
-            <br><%= homework.title %> homework not done yet
-            <!-- <%= link_to "hand it in", assignment_path(homework.assignment_id) %> -->
+          <%= link_to "#{homework.document_file_name}", homework.document.url(:original, false) %>
+          <% end %></td>
           <% end %>
-        <% end %></td>
-      </tr>
-    <% end %>
+      <% end %>
+    </tr>
   </tbody>
 </table>
+</center>
+
 
 <br>
 
@@ -65,24 +52,3 @@
 
 <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
-
-</center>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Due date</th>
-    </tr>
-  </thead>
-  <tbody>
-
-      <% @assignments.each do |assignment| %>
-      <tr>
-      <td><%= assignment.title %></td>
-      <td><%= assignment.due_date %></td>
-      <!-- <td><%= assignment.student_ids.document_file_name %></td> -->
-      <% end %>
-    </tr>
-  </tbody>
-</table>

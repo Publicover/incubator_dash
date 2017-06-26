@@ -12,14 +12,13 @@
   </head>
 
   <body>
-
     <%= render 'partials/nav_bar' unless @disable_nav %>
-
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
-
-    <%= yield %>
-
+    <div class="content">
+      <p id="notice"><%= notice %></p>
+      <p id="alert"><%= alert %></p>
+      <%= yield %>
+        <!-- <div class="push"></div> -->
+      </div>
     <%= render 'partials/footer' unless @disable_nav %>
   </body>
 </html>

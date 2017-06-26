@@ -1,11 +1,12 @@
 
-<div class="grid">
+<div class="content">
   <div class="middle">
     <h1> Hey, <%= session[:user_name] %>. </h1>
   </div>
 </div>
 
-<div class="grid">
+<div class="content">
+  <div class="two-columm">
   <div class="left">
     <%= image_tag current_user.avatar.url(:thumb), :class => "img-circle" %>
     <h3> session[:user_id]: <%= session[:user_id] %></h3>
@@ -33,6 +34,7 @@
       <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
     <% end %>
     <p><%= link_to 'Logout', logout_path, method: :delete %></p>
+</div>
 </div>
 </div>
 

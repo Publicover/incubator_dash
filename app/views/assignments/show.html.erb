@@ -1,11 +1,18 @@
-<h1>Assignments#show</h1>
-<p>Find me in app/views/assignments/show.html.erb</p>
+<!-- <div class="grid"> -->
+  <!-- <div class="middle"> -->
+<!-- <h1>Assignments#show</h1> -->
+<!-- <p>Find me in app/views/assignments/show.html.erb</p> -->
+<!-- </div> -->
+<!-- </div> -->
 
-<center>
 
-<h1> ASSIGNMENT: <%= @assignment.title %> </h1>
+  <div class="grid">
+    <div class="left">
 
-<br>
+<h1> ASSIGNMENT: <div class="pink"><%= @assignment.title %> </div></h1>
+
+</div>
+<div class="right">
 
 <p>
   <strong>Description:</strong>
@@ -22,9 +29,16 @@
   <%= @assignment.completed %>
 </p>
 
+</div>
+</div>
+
+  <div class="middle">
+
 <p>
   <button type="button" id="homework_popup_button">Upload some homework?</button>
 </p><br>
+
+
 
   <%= form_for @homework, html: { multipart: true, id: 'upload_homework' } do |f| %>
 
@@ -50,18 +64,15 @@
     </p>
   <% end %>
 
-<br>
-<%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
-<% if session[:user_flavor] == "admin" %>
-  <p><%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
-  <p><%= link_to "STUDENT INDEX", admins_path %></p>
-  <p><%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
-<% else %>
-  <p><%= link_to "YOUR ASSIGNMENTS", students_path %></p>
-<% end %>
+  <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
+  <% if session[:user_flavor] == "admin" %>
+    <p><%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
+    <p><%= link_to "STUDENT INDEX", admins_path %></p>
+    <p><%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
+  <% else %>
+    <p><%= link_to "YOUR ASSIGNMENTS", students_path %></p>
+  <% end %>
 
-<p><%= link_to 'Logout', logout_path, method: :delete %></p>
+  <p><%= link_to 'Logout', logout_path, method: :delete %></p>
 
-
-
-</center>
+</div>

@@ -1,22 +1,20 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
 
-<div class="page-wrap">
+<div class="grid">
+  <div class="middle">
+    <h1> Hey, <%= session[:user_name] %>. </h1>
+  </div>
+</div>
 
-  <div class="grid">
-
-    <h1> Welcome, session[:user_name]: <%= session[:user_name] %> </h1>
-    <h2> Or is it 'Welcome, current_user.name': <%= current_user.name %></h2>
+<div class="grid">
+  <div class="left">
     <%= image_tag current_user.avatar.url(:thumb), :class => "img-circle" %>
     <h3> session[:user_id]: <%= session[:user_id] %></h3>
     <h3> session[:user_flavor]: <%= session[:user_flavor] %></h3>
     <h3> session[:user_name]: <%= session[:user_name] %> </h3>
 
     <br>
-    <center>
-
-
-
+  </div>
+  <div class="right">
     <% if session[:user_flavor] == "admin" %>
       <p>View Students: <%= link_to 'STUDENTS', admins_path %></p>
       <p>View Profile: <%= link_to 'USER PROFILE', admin_path(session[:user_id]) %></p>
@@ -35,10 +33,9 @@
       <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
     <% end %>
     <p><%= link_to 'Logout', logout_path, method: :delete %></p>
+</div>
+</div>
 
       <!-- <p>View Assignments: <%= link_to 'ASSIGNMENTS', assignments_path %></p> -->
-    </center>
-  </div>
-</div>
 <div class="push">
 </div>

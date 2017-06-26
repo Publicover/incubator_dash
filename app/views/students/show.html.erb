@@ -1,8 +1,7 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<!-- <h1>Students#show</h1> -->
+<!-- <p>Find me in app/views/students/show.html.erb</p> -->
 
 
-<div class="content">
   <div class="two-columm">
   <div class="left">
     <h2> <%= @student.name %> </h2>
@@ -62,10 +61,6 @@
 
     <div class="right">
 <br>
-<%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
-<%= link_to "STUDENT INDEX", admins_path %><br>
-<%= link_to "MAKE A NEW STUDENT", new_student_path %>
-<p><%= link_to 'Logout', logout_path, method: :delete %></p>
 
 <br>
 <p>Dashboard: <%= link_to "FRONT PAGE", root_path %></p>
@@ -87,4 +82,4 @@
   <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
 <% end %>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
-</div></div></div>
+</div></div>

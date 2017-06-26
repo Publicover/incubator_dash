@@ -11,6 +11,32 @@
     <div class="left">
 
 <h1> ASSIGNMENT: <div class="pink"><%= @assignment.title %> </div></h1>
+<p>
+  <button type="button" id="homework_popup_button">Upload some homework?</button>
+</p>
+<%= form_for @homework, html: { multipart: true, id: 'upload_homework' } do |f| %>
+
+  <p>
+    <%= f.hidden_field :title, value: @assignment.title %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :student_id, value: session[:user_id] %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :assignment_id, value: @assignment.id %>
+  </p>
+
+  <p>
+    <%= f.label :document %>
+    <p><%= f.file_field :document %></p>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 </div>
 <div class="right">
@@ -35,35 +61,11 @@
 
   <div class="middle">
 
-<p>
-  <button type="button" id="homework_popup_button">Upload some homework?</button>
-</p><br>
+<br>
 
 
 
-  <%= form_for @homework, html: { multipart: true, id: 'upload_homework' } do |f| %>
 
-    <p>
-      <%= f.hidden_field :title, value: @assignment.title %>
-    </p>
-
-    <p>
-      <%= f.hidden_field :student_id, value: session[:user_id] %>
-    </p>
-
-    <p>
-      <%= f.hidden_field :assignment_id, value: @assignment.id %>
-    </p>
-
-    <p>
-      <%= f.label :document %>
-      <p><%= f.file_field :document %></p>
-    </p>
-
-    <p>
-      <%= f.submit %>
-    </p>
-  <% end %>
 
   <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
   <% if session[:user_flavor] == "admin" %>

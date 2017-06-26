@@ -14,6 +14,19 @@
  *= require_self
  */
 
+ @media all and (max-width: 500px) {
+  .two-columm {
+    /* On small screens, we are no longer using row direction but column */
+    flex-flow: column wrap;
+  }
+  .left {
+    min-width: 60%;
+  }
+  .right {
+    min-width: 60%;
+  }
+}
+
  ::-moz-selection {
     color: white;
     background-color: #FF0060;
@@ -26,17 +39,22 @@
 
  body {
    font-family: 'Spectral', 'serif';
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: -webkit-box;
+   display: flex;
+   flex-direction: column;
    padding-top: 70px;
    /*margin-top: 70px;*/
    /*border-top: 70px;*/
    margin: 0;
    height: 100%;
-   display: flex;
-   flex-direction: column;
  }
 
  html {
    height: 90.30%;
+   margin: 0;
  }
 
  .content {
@@ -47,6 +65,9 @@
 .two-columm {
   /*flex-direction: row;*/
   display: flex;
+  /*display: inline-flex;*/
+  /*flex-wrap: wrap;*/
+  flex-flow: row wrap;
 }
 
 /*.grid {
@@ -58,7 +79,7 @@
 .left {
   flex: 1;
   width: 40%;
-  font-size: 2.75vw;
+  font-size: 1.75vw;
   text-align: center;
   margin: 3%;
   border: 1px solid black;
@@ -70,13 +91,14 @@
   text-align: left;
   margin: 3%;
   border: 1px solid black;
+  font-size: 2vh;
 }
 
 .middle {
-  width: 80%;
+  width: 99%;
   text-align: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  /*padding-left: 10%;*/
+  /*padding-right: 10%;*/
   border: 1px solid black;
 }
 
@@ -203,17 +225,20 @@
    flex: 0 0 25%;
  }
 
- /*.homework-blocks {
+ .homework-blocks {
    background-color: lightgray;
- }*/
+   display: flex;
+   justify-content: space-around;
+ }
 
- /*.inside-homework {
+ .inside-homework {
    padding: 5px;
    border: 1px solid black;
    margin: 5px;
    background-color: white;
    display: inline-block;
- }*/
+   flex-shrink: 1;
+ }
 
  h1, h2, h3, h4, h5, h6 {
    font-family: 'Montserrat', 'sans-serif';

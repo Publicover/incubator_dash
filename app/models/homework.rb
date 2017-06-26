@@ -11,6 +11,7 @@ class Homework < ApplicationRecord
       "application/zip",
       "application/vnd.ms-excel"
     ],
+    default_url: "/images/:style/default.png",
     message: "invalid attached file type"
   # after_save :set_name
 

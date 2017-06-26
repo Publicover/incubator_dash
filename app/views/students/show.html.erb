@@ -1,62 +1,66 @@
 <h1>Students#show</h1>
 <p>Find me in app/views/students/show.html.erb</p>
 
-<center>
 
-<h1> STUDENT: <%= @student.name %> </h1>
+<div class="content">
+  <div class="two-columm">
+  <div class="left">
+    <h2> <%= @student.name %> </h2>
+    <!-- <p> -->
+      <!-- <strong>Email:</strong> -->
+      <!-- <p><%= @student.email %></p> -->
+    <!-- </p> -->
 
-<br>
+    <!-- <p> -->
+      <!-- <strong>Assignments:</strong> -->
+      <!-- <% @student.assignments.each do |item| %> -->
+        <!-- <p> <%= item.title %> </p> -->
+      <!-- <% end %> -->
+    <!-- </p> -->
 
-<!-- <p> -->
-  <!-- <strong>Email:</strong> -->
-  <!-- <p><%= @student.email %></p> -->
-<!-- </p> -->
+    <p>
+      <strong>Avatar!</strong><br>
+      <%= image_tag @student.avatar.url(:thumb), :class => "img-circle" %>
+      <!-- <%= image_tag @student.avatar.url(:medium) %> -->
+      <!-- <%= image_tag @student.avatar %> -->
+      <p><%= link_to "Update avatar", change_avatar_student_path(current_user) %></p>
+    </p>
 
-<!-- <p> -->
-  <!-- <strong>Assignments:</strong> -->
-  <!-- <% @student.assignments.each do |item| %> -->
-    <!-- <p> <%= item.title %> </p> -->
-  <!-- <% end %> -->
-<!-- </p> -->
+    <p>
+      <strong>Homework</strong>
+    <div class="homework-blocks">
+      <% @student.homeworks.each do |homework| %>
+        <div class="inside-homework">
 
-<p>
-  <strong>Avatar!</strong><br>
-  <%= image_tag @student.avatar.url(:thumb) %>
-  <!-- <%= image_tag @student.avatar.url(:medium) %> -->
-  <!-- <%= image_tag @student.avatar %> -->
-  <p><%= link_to "Update avatar", change_avatar_student_path(current_user) %></p>
-</p>
-
-<p>
-  <strong>Homework</strong>
-<div class="homework-blocks">
-  <% @student.homeworks.each do |homework| %>
-  <div class="inside-homework">
-    <p><%= link_to "#{homework.title}", homework_path(homework) %> </p>
-    <% unless homework.document_file_name.nil? %>
-      <% type = homework.document_file_name.split(".")[-1] %>
-      <% if homework.document_file_name.include?(type) %>
-        <%= link_to homework.document.url(:original, false) do %>
-          <%= image_tag("#{type}_icon50.png") %>
-        <% end %>
-      <% else %>
-        <%= image_tag homework.document.url(:thumb) %>
+        <% unless homework.document_file_name.nil? %>
+          <p><%= link_to "#{homework.title}", homework_path(homework) %> </p>
+          <% type = homework.document_file_name.split(".")[-1] %>
+          <% if homework.document_file_name.include?(type) %>
+            <%= link_to homework.document.url(:original, false) do %>
+              <%= image_tag("#{type}_icon50.png") %>
+            <% end %>
+          <% else %>
+            <%= image_tag homework.document.url(:thumb) %>
+          <% end %>
+        <% else %>
+          <p><%= "#{homework.title}" %></p>
+        <% end%>
+        </div>
       <% end %>
-    <% end%>
     </div>
-  <% end %>
-</div>
+    <center>
+    <table>
+      <tbody>
+    <td><%= link_to 'EDIT', edit_student_path(@student) %></td>
+    <td><%= link_to 'DESTROY', student_path(@student),
+            method: :delete,
+            data: { confirm: 'OK, well, just be careful.' } %></td>
+      </tbody>
+    </table>
+  </center>
+  </div>
 
-
-<table>
-  <tbody>
-<td><%= link_to 'EDIT', edit_student_path(@student) %></td>
-<td><%= link_to 'DESTROY', student_path(@student),
-        method: :delete,
-        data: { confirm: 'OK, well, just be careful.' } %></td>
-  </tbody>
-</table>
-
+    <div class="right">
 <br>
 <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
 <%= link_to "STUDENT INDEX", admins_path %><br>
@@ -83,4 +87,4 @@
   <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
 <% end %>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
-</center>
+</div></div></div>

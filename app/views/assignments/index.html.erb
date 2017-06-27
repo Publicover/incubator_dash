@@ -26,10 +26,6 @@
         <td><%= assignment.description.truncate_words(10) %></td>
         <td><%= assignment.due_date.strftime("%b %e, %Y") %></td>
         <td><%= assignment.completed %></td>
-
-
-        <!-- <td> test here </td> -->
-
         <% if session[:user_flavor] == "admin" %>
           <td><%= link_to 'SHOW', assignment_path(assignment) %></td>
           <td><%= link_to 'EDIT', edit_assignment_path(assignment) %></td>

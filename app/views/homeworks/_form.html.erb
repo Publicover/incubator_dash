@@ -21,7 +21,7 @@
 
   <p>
     <%= f.label "Assignment" %>
-    <%= f.collection_select(:assignment_id, Assignment.all, :id, :description) %>
+    <%= f.collection_select(:assignment_id, Assignment.all, :id, :title) %>
   </p>
 
   <p>

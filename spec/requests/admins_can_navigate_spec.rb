@@ -17,4 +17,34 @@ RSpec.describe "Admin navigation" do
     expect(page).to have_content 'Admins#index'
   end
 
+  it "should get their own profile" do
+    click_link 'USER PROFILE'
+    expect(page).to have_content 'Admins#show'
+  end
+
+  it "should get new students page" do
+    click_link 'NEW STUDENTS'
+    expect(page).to have_content 'Students#new'
+  end
+
+  it "should get new students page" do
+    click_link 'ASSIGNMENT INDEX'
+    expect(page).to have_content 'Listing Assignments'
+  end
+
+  it "should get new students page" do
+    click_link 'NEW ASSIGNMENTS'
+    expect(page).to have_content 'Assignments#new'
+  end
+
+  it "should get new students page" do
+    click_link 'ALL HOMEWORK'
+    expect(page).to have_content 'Upload some homework:'
+  end
+
+  it "should get new students page" do
+    click_link 'NEW HOMEWORK'
+    expect(page).to have_content 'Homeworks#new'
+  end
+
 end

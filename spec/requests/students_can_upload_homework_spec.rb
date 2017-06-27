@@ -34,7 +34,7 @@ RSpec.describe "Student homework" do
     #   find('td:nth-child(4)').find(:xpath, "//*[text()='Bio']").click
     # end
     visit '/assignments/1'
-    expect(page).to have_text("Assignments#show")
+    expect(page).to have_text("ASSIGNMENT: Bio")
     # within('td') do
     #   click_on "Bio"
     # end
@@ -53,7 +53,7 @@ RSpec.describe "Student homework" do
     click_link "ASSIGNMENTS"
     expect(page).to have_text("Students#index")
     visit '/assignments/1'
-    expect(page).to have_text("Assignments#show")
+    expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.pdf'))
@@ -66,7 +66,7 @@ RSpec.describe "Student homework" do
     click_link "ASSIGNMENTS"
     expect(page).to have_text("Students#index")
     visit '/assignments/1'
-    expect(page).to have_text("Assignments#show")
+    expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.txt'))
@@ -80,7 +80,7 @@ RSpec.describe "Student homework" do
     click_link "ASSIGNMENTS"
     expect(page).to have_text("Students#index")
     visit '/assignments/1'
-    expect(page).to have_text("Assignments#show")
+    expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.docx'))
@@ -93,7 +93,7 @@ RSpec.describe "Student homework" do
     click_link "ASSIGNMENTS"
     expect(page).to have_text("Students#index")
     visit '/assignments/1'
-    expect(page).to have_text("Assignments#show")
+    expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.xlsx'))

@@ -25,7 +25,7 @@ RSpec.describe "Student avatar" do
     attach_file("student[avatar]", Rails.root.join('spec', 'fixtures',
       'jennifer_connelly_2.jpg'))
     click_button "Update Student"
-    expect(page).to have_text("Students#show")
+    expect(page).to have_text("jill")
     expect(page).to have_xpath("//img[contains(@src,'jennifer_connelly_2.jpg')]")
   end
 

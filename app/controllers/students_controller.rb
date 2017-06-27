@@ -76,6 +76,11 @@ class StudentsController < ApplicationController
     # end
   end
 
+  def import
+    Student.import(params[:file])
+    redirect_to root_path, notice: "IMPORT SUCCESSFUL"
+  end
+
   private
 
     def set_student

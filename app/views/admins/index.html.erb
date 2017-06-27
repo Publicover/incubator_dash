@@ -49,6 +49,12 @@
     </tbody>
   </table>
 
+  <h1>IMPORT STUDENTS</h1>
+    <%= form_tag import_students_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "IMPORT CSV" %>
+    <% end %>
+
   <br>
 
     <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p>

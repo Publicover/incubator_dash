@@ -11,4 +11,10 @@ class Student < ApplicationRecord
   validates :name, :flavor, :admin_id, presence: true
   validates :email, uniqueness: true, format: { with: /@/, message: "Must be email address."},
                     length: { in: 8..250 }
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      Student.create!(row.to_hash)
+    end
+  end
 end

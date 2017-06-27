@@ -11,10 +11,17 @@ Rails.application.routes.draw do
   resources :admins
 
   resources :students do
+    collection { post :import }
     member do
       get "change_avatar"
     end
   end
+
+  # resources :students do
+  #   collection { post :import }
+  # end
+
+
 
   # resources :assignments do
   #   resources :homeworks

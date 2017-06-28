@@ -2,6 +2,8 @@ class Student < ApplicationRecord
   has_secure_password
   belongs_to :admin
   has_and_belongs_to_many :assignments
+  # has_many :assignments_students
+  # has_many :assignments, :through => :assignments_students
   has_many :homeworks
   has_attached_file :avatar,
     styles: { medium: "300x300>", thumb: "100x100#", tiny: "45x45#" },

@@ -18,7 +18,6 @@
 $(document).on('turbolinks:load', function()  {
 // $(document).on 'turbolinks:load', ->
 // $(document).on('page:change', function(){
-// 8009 foxwood road
 
   $('#upload_homework').hide(); //Initially form wil be hidden.
 
@@ -27,6 +26,18 @@ $(document).on('turbolinks:load', function()  {
 
    });
  });
+
+// $(document).on('turbolinks:load', function() {
+//   $('input:submit').attr('disabled',true);
+//   $('input:file').change(
+//     function(){
+//       if ($(this).val()){
+//         $('input:submit').removeAttr('disabled');
+//       } else {
+//         $('input:submit').attr('disabled',true);
+//       }
+//   });
+// });
 
  // $(document).on('turbolinks:load', function() {
 

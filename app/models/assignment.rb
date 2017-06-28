@@ -1,5 +1,7 @@
 class Assignment < ApplicationRecord
   has_and_belongs_to_many :students
+  # has_many :assignments_students
+  # has_many :students, :through => :assignments_students
   has_many :homeworks
   # before_validation :check_date
   validates :title, :description, :due_date, presence: true

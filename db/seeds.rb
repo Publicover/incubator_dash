@@ -20,3 +20,6 @@ week_two = Assignment.create!(title: "Mission", description: "Write a mission st
            completed: false, student_ids: [1, 2, 3], due_date: Date.new(2017, 12, 1))
 rupert_homework_one = Homework.create!(title: "bio sheet", student_id: 1, assignment_id: 1)
 rupert_homework_two = Homework.create!(title: "mission sheet", student_id: 1, assignment_id: 2)
+
+tomorrow 1pm
+3404 wake forest rd st 303 cancer center 

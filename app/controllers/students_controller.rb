@@ -63,7 +63,7 @@ class StudentsController < ApplicationController
     # else
     #   redirect_to students_path
     # end
-    redirect_to root_path
+    redirect_to admins_path
   end
 
   def change_avatar
@@ -78,7 +78,7 @@ class StudentsController < ApplicationController
 
   def import
     Student.import(params[:file])
-    redirect_to root_path, notice: "IMPORT SUCCESSFUL"
+    redirect_to admins_path, notice: "IMPORT SUCCESSFUL"
   end
 
   private

@@ -5,10 +5,17 @@
     </div>
     <div id='nav-middle'>
       <div id='nav-bold'>
-        <%= link_to "Home", root_path %>  |  <%= link_to "Assignments", students_path %>  |
-        <%= link_to "Profile", students_path(session[:user_id]) %>  |
-        <%= link_to "Avatar update", change_avatar_student_path(current_user.id) %>  |
-        <%= link_to 'Logout', logout_path, method: :delete %> | 
+        <% if session[:user_flavor] == "admin" %>
+          <%= link_to "Home", root_path %>  |  <%= link_to "Students", admins_path %>  |
+          <%= link_to "Profile", admin_path(session[:user_id]) %>  |
+          <%= link_to "Avatar update", change_avatar_student_path(current_user.id) %>  |
+          <%= link_to 'Logout', logout_path, method: :delete %> |
+        <% else %>
+          <%= link_to "Home", root_path %>  |  <%= link_to "Assignments", students_path %>  |
+          <%= link_to "Profile", student_path(session[:user_id]) %>  |
+          <%= link_to "Avatar update", change_avatar_student_path(current_user.id) %>  |
+          <%= link_to 'Logout', logout_path, method: :delete %> |
+        <% end %>
         <!-- <%= image_tag current_user.avatar.url(:tiny), :class => "img-circle room-on-top" %> -->
 
       <!-- <% if current_user.avatar.blank? %> -->

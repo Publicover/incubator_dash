@@ -13,7 +13,11 @@ RSpec.describe "Admin assignment creation" do
   end
 
   it "takes a CSV" do
-    flunk
+    click_link "ASSIGNMENT INDEX"
+    expect(page).to have_text("Assignments#index")
+    attach_file("choose-assignment", Rails.root.join('assignment_test.csv'))
+    click_button "IMPORT CSV"
+    expect(page).to have_text("bio2")
   end
 
 end

@@ -40,6 +40,19 @@ $(document).on('turbolinks:load', function()  {
    );
  });
 
+ $(document).on('turbolinks:load', function()  {
+   $('#assignment-import').attr('disabled', true);
+   $('input:file').change(
+     function(){
+       if ($(this).val()){
+         $('#assignment-import').removeAttr('disabled');
+       } else {
+         $('#assignment-import').attr('disabled', true);
+       }
+     }
+   );
+ });
+
 
  // $(document).on('turbolinks:load', function() {
 

@@ -13,7 +13,11 @@ RSpec.describe "Admin student creation" do
   end
 
   it "takes a CSV" do
-    flunk
+    click_link "STUDENTS"
+    expect(page).to have_text("Admins#index")
+    attach_file("choose-student", Rails.root.join('student_test.csv'))
+    click_button "IMPORT CSV"
+    expect(page).to have_text("jill")
   end
 
 end

@@ -5,7 +5,7 @@
 
 <center>
 
-<h1>Listing Assignments</h1>
+<h1>Listing All Assignments</h1>
 
 <table>
   <thead>
@@ -39,6 +39,13 @@
 </table>
 
 <br>
+<% if session[:user_flavor] == "admin" %>
+  <h1>IMPORT ASSIGNMENT</h1>
+  <%= form_tag import_assignments_path, multipart: true do %>
+    <%= file_field_tag :file, :id => 'choose-assignment'  %>
+    <%= submit_tag "IMPORT CSV", :class => "pink-btn", :id => "assignment-import"  %>
+    <% end %>
+<% end %>
 
   <!-- <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p> -->
   <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>

@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   #   resources :homeworks
   # end
 
-  resources :assignments
+  resources :assignments do
+    collection { post :import }
+  end
 
   resources :homeworks
 

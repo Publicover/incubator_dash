@@ -7,9 +7,6 @@ class Assignment < ApplicationRecord
   validates :title, :description, :due_date, presence: true
 
   def completed=(completed)
-  # #   # self[:due_date] > DateTime.now ? self[:completed] = true : self[:completed]
-  # #   # self[:completed] = true if self[:due_date] > Date.today
-  # #   # false
     completed
   end
   #
@@ -44,6 +41,12 @@ class Assignment < ApplicationRecord
       return true
     else
       return false
+    end
+  end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      Assignment.create!(row.to_hash)
     end
   end
 

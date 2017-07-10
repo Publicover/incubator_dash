@@ -91,6 +91,11 @@
       @assignments = Assignment.all
     end
 
+    def import
+      Assignment.import(params[:file])
+      redirect_to assignments_path, notice: "Assignments created by CSV"
+    end
+
     private
 
       def set_assignment

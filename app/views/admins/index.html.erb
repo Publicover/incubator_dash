@@ -51,8 +51,8 @@
 
   <h1>IMPORT STUDENTS</h1>
     <%= form_tag import_students_path, multipart: true do %>
-      <%= file_field_tag :file %>
-      <%= submit_tag "IMPORT CSV", :class => "pink-btn" %>
+      <%= file_field_tag :file, :id => 'choose-student' %>
+      <%= submit_tag "IMPORT CSV", :class => "pink-btn", :id => "student-import" %>
     <% end %>
 
   <br>

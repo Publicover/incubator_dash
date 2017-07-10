@@ -27,17 +27,19 @@ $(document).on('turbolinks:load', function()  {
    });
  });
 
-// $(document).on('turbolinks:load', function() {
-//   $('input:submit').attr('disabled',true);
-//   $('input:file').change(
-//     function(){
-//       if ($(this).val()){
-//         $('input:submit').removeAttr('disabled');
-//       } else {
-//         $('input:submit').attr('disabled',true);
-//       }
-//   });
-// });
+ $(document).on('turbolinks:load', function()  {
+   $('#student-import').attr('disabled', true);
+   $('input:file').change(
+     function(){
+       if ($(this).val()){
+         $('#student-import').removeAttr('disabled');
+       } else {
+         $('#student-import').attr('disabled', true);
+       }
+     }
+   );
+ });
+
 
  // $(document).on('turbolinks:load', function() {
 

@@ -29,7 +29,7 @@ RSpec.describe "Admin navigation" do
 
   it "should get new students page" do
     click_link 'ASSIGNMENT INDEX'
-    expect(page).to have_content 'Listing Assignments'
+    expect(page).to have_content 'Listing All Assignments'
   end
 
   it "should get new students page" do

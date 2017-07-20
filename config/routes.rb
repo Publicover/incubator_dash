@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
   get 'reminders/write_email'
   post 'reminders/send_email'
 
@@ -17,21 +19,12 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :students do
-  #   collection { post :import }
-  # end
-
-
-
-  # resources :assignments do
-  #   resources :homeworks
-  # end
-
   resources :assignments do
     collection { post :import }
   end
 
   resources :homeworks
+  resources :password_resets
 
   root 'dashboards#index'
 

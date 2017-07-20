@@ -6,6 +6,7 @@ class ResetMailer < ApplicationMailer
   #   en.reset_mailer.password_reset.subject
   #
   def password_reset(student)
+    @greeting = "Hey"
     @student = student
     mail :to => student.email, :subject => "dash creative Password Reset"
   end

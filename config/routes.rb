@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'homes/index'
+
   get 'password_resets/new'
 
   get 'reminders/write_email'

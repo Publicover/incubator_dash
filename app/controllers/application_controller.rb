@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def logged_in?
-    redirect_to homes_index_url, notice: "You must log in to access this page" unless session[:user_id]
+    redirect_to login_path, notice: "You must log in to access this page" unless session[:user_id]
   end
 
   def logged_in_as_admin?

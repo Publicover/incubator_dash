@@ -11,7 +11,7 @@ class PasswordResetsController < ApplicationController
   def create
     student = Student.find_by_email(params[:email])
     student.send_password_reset if student
-    redirect_to root_path, :notice => "Email sent with reset instructions"
+    redirect_to login_path, :notice => "Email sent with reset instructions"
   end
 
   def update

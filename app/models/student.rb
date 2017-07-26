@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+  # attr_accessor :email, :password, :password_confirmation
   has_secure_password
   belongs_to :admin
   has_and_belongs_to_many :assignments
@@ -13,6 +14,8 @@ class Student < ApplicationRecord
   validates :name, :flavor, :admin_id, presence: true
   validates :email, uniqueness: true, format: { with: /@/, message: "Must be email address."},
                     length: { in: 8..250 }
+  # validates_presence_of :password, :on => :create
+  before_create { generate_token(:auth_token) }
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|

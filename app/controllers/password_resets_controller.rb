@@ -15,6 +15,8 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
+    # per the railscast except for moving student_params to private here per hartl
+    # https://www.railstutorial.org/book/password_reset
     @student = Student.find_by_password_reset_token!(params[:id])
     if @student.password_reset_send_at < 2.hours.ago
       redirect_to new_password_reset_path, :alert => "Password reset has expired"

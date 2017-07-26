@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe StudentMailer do
 
   describe "sending it" do
-    let (:address) { ['fake@faker.com'] }
+    let(:address) { ['fake@faker.com'] }
     let(:mail) { described_class.say_hi(address).deliver_now }
 
     it "has a subject" do

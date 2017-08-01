@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
   get 'homes/index'
-
   get 'password_resets/new'
-
   get 'reminders/write_email'
   post 'reminders/send_email'
-
-  # get 'dashboards/index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
@@ -27,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :homeworks
   resources :password_resets
+  resources :account_activation, only: [:edit]
 
   root 'dashboards#index'
 

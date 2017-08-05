@@ -16,6 +16,7 @@ class Student < ApplicationRecord
                     length: { in: 8..250 }
   # validates_presence_of :password, :on => :create
   # before_create { generate_token(:auth_token) }
+  before_create :create_activation_digest
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
@@ -35,4 +36,16 @@ class Student < ApplicationRecord
     save!
     ResetMailer.password_reset(self).deliver
   end
+
+  def Student.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  private
+
+    def create_activation_digest
+      # self.activation_token = Student.new_token
+      self.activation_digest = Student.digest(SecureRandom.urlsafe_base64)
+    end
+
 end

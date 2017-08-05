@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801214141) do
+ActiveRecord::Schema.define(version: 20170805195439) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 20170801214141) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "flavor"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "admin_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -82,9 +82,6 @@ ActiveRecord::Schema.define(version: 20170801214141) do
     t.datetime "avatar_updated_at"
     t.string   "password_reset_token"
     t.datetime "password_reset_send_at"
-    t.string   "activation_digest"
-    t.boolean  "activated",              default: false
-    t.datetime "activated_at"
     t.index ["admin_id"], name: "index_students_on_admin_id"
   end
 

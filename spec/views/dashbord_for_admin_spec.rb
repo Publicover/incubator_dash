@@ -15,8 +15,6 @@ RSpec.describe "dashboard index" do
   it "should get name" do
     expect(page).to have_text("Hey, jim")
     expect(page).to have_text("session[:user_name]: jim")
-    # expect(page).to have_text("current_user.name': jim")
-    # expect(page).to have_text("session[:user_id]: 1")
     expect(page).to have_text("session[:user_flavor]: admin")
   end
 

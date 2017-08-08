@@ -1,10 +1,14 @@
-<h1>PasswordResets#new</h1>
-<p>Find me in app/views/password_resets/new.html.erb</p>
-
-<h1> Reset your password </h1>
-
-<%= form_tag password_resets_path, :method => :post do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email, params[:email] %>
-  <%= submit_tag "Reset PW" %>
-<% end %>
+<center>
+  <div class="signin-centered">
+    <h1>RESET YOUR PASSWORD</h1>
+    <p>That's OK. It happens to all of us.</p>
+    <div class="signin-box">
+      <h3>ENTER YOUR EMAIL</h3>
+      <p>A reset link will be sent to you.</p>
+      <%= form_tag password_resets_path, :method => :post do %>
+        <p><%= text_field_tag :email, params[:email] %></p>
+        <p><%= submit_tag "Reset PW", class: 'pink-btn'  %></p>
+      <% end %>
+    </div>
+  </div>
+</center>

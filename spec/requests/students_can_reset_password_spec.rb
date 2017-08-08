@@ -23,7 +23,7 @@ RSpec.describe "Student password" do
 
   it "sends a reset email" do
     click_link "Forget your password?"
-    expect(page).to have_content("Reset your password")
+    expect(page).to have_content("RESET YOUR PASSWORD")
     fill_in "email", with: "jill@jill.com"
     # expect { mail }.to change { ActionMailer::Base.deliveries.count }.by(1)
     # get edit_password_reset_path(password_reset_token: "sendthisrightawayplease")

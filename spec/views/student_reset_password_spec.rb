@@ -11,7 +11,7 @@ RSpec.describe "dashboard index" do
 
   it "should navigate to form" do
     click_link "Forget your password?"
-    expect(page).to have_text("PasswordResets#new")
+    expect(page).to have_text("RESET YOUR PASSWORD")
     fill_in 'email', with: 'jill@jill.com'
     click_button 'Reset PW'
     expect(page).to have_text("Email sent with reset instructions")

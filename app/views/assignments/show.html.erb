@@ -21,7 +21,7 @@
   </p>
 
   <p>
-    <%= f.hidden_field :student_id, value: session[:user_id] %>
+    <%= f.hidden_field :user_id, value: session[:user_id] %>
   </p>
 
   <p>
@@ -68,12 +68,12 @@
 
 
   <%= link_to "FRONT PAGE DASHBOARD", root_path %><br>
-  <% if session[:user_flavor] == "admin" %>
+  <% if session[:user_role] == "admin" %>
     <p><%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
     <p><%= link_to "STUDENT INDEX", admins_path %></p>
-    <p><%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
+    <p><%= link_to "MAKE A NEW STUDENT", new_user_path %></p>
   <% else %>
-    <p><%= link_to "YOUR ASSIGNMENTS", students_path %></p>
+    <p><%= link_to "YOUR ASSIGNMENTS", users_path %></p>
   <% end %>
 
   <p><%= link_to 'Logout', logout_path, method: :delete %></p>

@@ -28,10 +28,10 @@ class StudentTest < ActiveSupport::TestCase
     assert_not_nil @student.errors[:password]
   end
 
-  test "invalid without flavor" do
-    @student.flavor = nil
+  test "invalid without role" do
+    @student.role = nil
     refute @student.valid?
-    assert_not_nil @student.errors[:flavor]
+    assert_not_nil @student.errors[:role]
   end
 
 end

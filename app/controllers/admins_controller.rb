@@ -6,6 +6,18 @@ class AdminsController < ApplicationController
     @admins = Admin.where(id: session[:user_id])
     @students = Student.where(admin_id: session[:user_id])
     # MakeReminderJob.perform_now("jim@sprintwithdash.com")
+    # if session[:user_role] == "admin"
+    #   @admins = Admin.all
+    #   @students = Student.where(admin_id: session[:user_id])
+    # else
+    #   @admins = Admin.where(id: session[:user_id])
+    # end
+    # if session[:user_role] == "admin"
+    #   render 'fake_admin'
+    # else
+    #   @admins = Admin.where(id: session[:user_id])
+    #   @students = Student.where(admin_id: session[:user_id])
+    # end
   end
 
   def show
@@ -44,7 +56,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     @admin.destroy
 
-    if session[:user_flavor] == "admin"
+    if session[:user_role] == "admin"
       redirect_to admins_path
     else
       redirect_to students_path
@@ -58,6 +70,6 @@ class AdminsController < ApplicationController
     end
 
     def admin_params
-      params.require(:admin).permit(:name, :email, :password, :flavor, :avatar)
+      params.require(:admin).permit(:name, :email, :password, :role, :avatar)
     end
 end

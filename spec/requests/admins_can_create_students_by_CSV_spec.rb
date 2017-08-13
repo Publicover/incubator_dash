@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe "Admin student creation" do
 
   before do
-    @admin = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
+    # @admin = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
+    @user = User.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin",
+      course_name: "GBO INC")
     visit '/'
     expect(page).to have_text("You must log in to access this page")
     fill_in 'email', with: 'jim@jim.com'

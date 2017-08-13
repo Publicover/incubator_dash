@@ -3,10 +3,12 @@ require 'rails_helper'
 RSpec.describe "Admin login" do
 
   before do
-    Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
+    # Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
+    @user = User.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin",
+      course_name: "GBO INC")
   end
 
-  # subject { described_class.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")}
+  # subject { described_class.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")}
 
   it "needs an email" do
     visit '/'

@@ -1,0 +1,69 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+  <div class="two-columm">
+  <div class="left">
+    <h2> <%= @user.name %> </h2>
+    <p>
+      <strong>Avatar!</strong><br>
+      <%= image_tag @user.avatar.url(:thumb), :class => "img-circle" %>
+      <p><%= link_to "Update avatar", change_avatar_user_path(current_user) %></p>
+    </p>
+
+    <p>
+      <strong>Homework</strong>
+    <div class="homework-blocks">
+      <% @user.homeworks.each do |homework| %>
+        <div class="inside-homework">
+
+        <% unless homework.document_file_name.nil? %>
+          <p><%= link_to "#{homework.title}", homework_path(homework) %> </p>
+          <% type = homework.document_file_name.split(".")[-1] %>
+          <% if homework.document_file_name.include?(type) %>
+            <%= link_to homework.document.url(:original, false) do %>
+              <%= image_tag("#{type}_icon50.png") %>
+            <% end %>
+          <% else %>
+            <%= image_tag homework.document.url(:thumb) %>
+          <% end %>
+        <% else %>
+          <p><%= "#{homework.title}" %></p>
+        <% end%>
+        </div>
+      <% end %>
+    </div>
+    <center>
+    <table>
+      <tbody>
+    <td><%= link_to 'EDIT', edit_user_path(@user) %></td>
+    <td><%= link_to 'DESTROY', user_path(@user),
+            method: :delete,
+            data: { confirm: 'OK, well, just be careful.' } %></td>
+      </tbody>
+    </table>
+  </center>
+  </div>
+
+    <div class="right">
+<br>
+
+<br>
+<p>Dashboard: <%= link_to "FRONT PAGE", root_path %></p>
+<% if session[:user_role] == "admin" %>
+  <p>View Students: <%= link_to 'STUDENTS', users_path %></p>
+  <p>View Profile: <%= link_to 'USER PROFILE', user_path(session[:user_id]) %></p>
+<% else %>
+  <p>View Profile: <%= link_to 'USER PROFILE', user_path(session[:user_id]) %></p>
+  <p>View Assignments: <%= link_to 'ASSIGNMENTS', users_path %></p>
+<% end %>
+<p>Change Avatar:<%= link_to 'AVATAR', change_avatar_user_path(session[:user_id]) %> </p>
+
+<% if session[:user_role] == "admin" %>
+  <p>Make a new student: <%= link_to 'NEW STUDENTS', new_user_path %></p>
+  <p>View assignments: <%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
+  <p>Make a new assignment: <%= link_to 'NEW ASSIGNMENTS', new_assignment_path %></p>
+  <p>See your uploaded files: <%= link_to 'ALL HOMEWORK', homeworks_path %></p>
+  <p>Upload some homework: <%= link_to 'NEW HOMEWORK', new_homework_path %></p>
+  <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
+<% end %>
+<p><%= link_to 'Logout', logout_path, method: :delete %></p>
+</div></div>

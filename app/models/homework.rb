@@ -1,7 +1,7 @@
 class Homework < ApplicationRecord
-  belongs_to :student
+  belongs_to :user
   belongs_to :assignment
-  validates :title, :student_id, :assignment_id, presence: true
+  validates :title, :user_id, :assignment_id, presence: true
   has_attached_file :document
   validates_attachment_content_type :document,
     content_type: [

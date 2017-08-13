@@ -11,4 +11,15 @@ admin     <%= link_to "MAKE A NEW ASSIGNMENT", new_assignment_path %>
 
 
 add homework as nested resource, have students visit edit page to upload files
-  pass student id and assignment id 
+  pass student id and assignment id
+
+
+
+CHANGING TO SINGLE USER:
+
+CREATE MODEL
+COPY METHODS FROM STUDENT AND ADMIN MODELS
+IN USER CONTROLLER, USE IF LOGIC BASED ON ROLE
+  SUCH AS IS COMMENTED OUT IN ADMIN CONTROLLER NOW
+GO THROUGH AND CHANGE EVERY INCIDENCE OF STUDENT OR ADMIN TO USER
+REDO THE VIEWS FOR EACH USER CASE AND PUT THEM IN VIEWS/USER FOLDER

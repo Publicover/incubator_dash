@@ -4,10 +4,10 @@ one:
   name: Jim
   email: jim@jim.com
   password_digest: <%= BCrypt::Password.create("jimjimjim") %>
-  flavor: admin
+  role: admin
 
 two:
   name: Not Jim
   email: NOJIM@jim.com
   password_digest: <%= BCrypt::Password.create("jimjimjim") %>
-  flavor: admin
+  role: admin

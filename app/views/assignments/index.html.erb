@@ -24,7 +24,7 @@
         <td><%= assignment.description.truncate_words(10) %></td>
         <td><%= assignment.due_date.strftime("%b %e, %Y") %></td>
         <td><%= assignment.completed %></td>
-        <% if session[:user_flavor] == "admin" %>
+        <% if session[:user_role] == "admin" %>
           <td><%= link_to 'SHOW', assignment_path(assignment) %></td>
           <td><%= link_to 'EDIT', edit_assignment_path(assignment) %></td>
           <td><%= link_to 'DESTROY', assignment_path(assignment),
@@ -37,7 +37,7 @@
 </table>
 
 <br>
-<% if session[:user_flavor] == "admin" %>
+<% if session[:user_role] == "admin" %>
   <h1>IMPORT ASSIGNMENT</h1>
   <%= form_tag import_assignments_path, multipart: true do %>
     <%= file_field_tag :file, :id => 'choose-assignment'  %>
@@ -45,14 +45,13 @@
     <% end %>
 <% end %>
 
-  <!-- <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p> -->
   <p>Go back to the dashboard: <%= link_to 'FRONT PAGE', root_path %></p>
 
-<% if session[:user_flavor] == "admin" %>
+<% if session[:user_role] == "admin" %>
   <p>Go to the assignment index: <%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
   <p>Make a new assignment: <%= link_to "MAKE A NEW ASSIGNMENT", new_assignment_path %> </p>
-  <p>Go to the student index: <%= link_to "STUDENT INDEX", admins_path %></p>
-  <p>Make a new student: <%= link_to "MAKE A NEW STUDENT", new_student_path %></p>
+  <p>Go to the student index: <%= link_to "STUDENT INDEX", users_path %></p>
+  <p>Make a new student: <%= link_to "MAKE A NEW STUDENT", new_user_path %></p>
 <% end %>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
 

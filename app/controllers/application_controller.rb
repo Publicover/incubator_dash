@@ -7,21 +7,22 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_as_admin?
-    redirect_to root_path, notice: "You do not have permission to access that page." unless session[:user_flavor] == "admin"
+    redirect_to root_path, notice: "You do not have permission to access that page." unless session[:role] == "admin"
   end
 
   def logged_in_as_student?
-    redirect_to root_path, notice: "NOPE NOPE NOPE--DON'T HAVE CREDENTIALS" unless session[:user_flavor] == "student" || session[:user_flavor] == "admin"
+    redirect_to root_path, notice: "NOPE NOPE NOPE--DON'T HAVE CREDENTIALS" unless session[:user_role] == "student"
   end
 
   private
 
-  def current_user
-    if session[:user_flavor] == "admin"
-      @current_user ||= Admin.find(session[:user_id])
-    else
-      @current_user ||= Student.find(session[:user_id])
+    def current_user
+      # if session[:user_role] == "admin"
+      #   @current_user ||= Admin.find(session[:user_id])
+      # else
+      #   @current_user ||= Student.find(session[:user_id])
+      # end
+      @current_user ||= User.find(session[:user_id])
     end
-  end
 
 end

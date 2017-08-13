@@ -5,22 +5,17 @@
     </div>
     <div id='nav-middle'>
       <div id='nav-bold'>
-        <% if session[:user_flavor] == "admin" %>
-          <%= link_to "Home", root_path %>  |  <%= link_to "Students", admins_path %>  |
-          <%= link_to "Profile", admin_path(session[:user_id]) %>  |
-          <%= link_to "Avatar update", change_avatar_student_path(current_user.id) %>  |
+        <% if session[:user_role] == "admin" %>
+          <%= link_to "Home", root_path %>  |  <%= link_to "Students", users_path %>  |
+          <%= link_to "Profile", user_path(session[:user_id]) %>  |
+          <%= link_to "Avatar update", change_avatar_user_path(current_user.id) %>  |
           <%= link_to 'Logout', logout_path, method: :delete %> |
         <% else %>
-          <%= link_to "Home", root_path %>  |  <%= link_to "Assignments", students_path %>  |
-          <%= link_to "Profile", student_path(session[:user_id]) %>  |
-          <%= link_to "Avatar update", change_avatar_student_path(current_user.id) %>  |
+          <%= link_to "Home", root_path %>  |  <%= link_to "Assignments", users_path %>  |
+          <%= link_to "Profile", user_path(session[:user_id]) %>  |
+          <%= link_to "Avatar update", change_avatar_user_path(current_user.id) %>  |
           <%= link_to 'Logout', logout_path, method: :delete %> |
         <% end %>
-        <!-- <%= image_tag current_user.avatar.url(:tiny), :class => "img-circle room-on-top" %> -->
-
-      <!-- <% if current_user.avatar.blank? %> -->
-        <!-- <%= link_to "Update profile", student_path(current_user) %> -->
-      <!-- <% end %> -->
     </div>
     </div>
     <div>

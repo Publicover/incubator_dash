@@ -34,10 +34,10 @@
 
   <p>
     <%= f.label "Students" %> <br>
-    <%= f.collection_check_boxes :student_ids, Student.all, :id, :name do |student| %>
+    <%= f.collection_check_boxes :user_ids, User.all, :id, :name do |user| %>
     <div class="collection-check-box">
-        <%= student.check_box %>
-        <%= student.label %>
+        <%= user.check_box %>
+        <%= user.label %>
       </div>
       <% end %>
   </p>

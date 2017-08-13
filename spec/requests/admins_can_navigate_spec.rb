@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe "Admin navigation" do
 
   before do
-    Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
+    # Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
+    @user = User.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin",
+      course_name: "GBO INC")
     visit '/'
     expect(page).to have_text("You must log in to access this page")
     fill_in 'email', with: 'jim@jim.com'
@@ -19,12 +21,12 @@ RSpec.describe "Admin navigation" do
 
   it "should get their own profile" do
     click_link 'USER PROFILE'
-    expect(page).to have_content 'Admins#show'
+    expect(page).to have_content 'Users#show'
   end
 
   it "should get new students page" do
     click_link 'NEW STUDENTS'
-    expect(page).to have_content 'Students#new'
+    expect(page).to have_content 'Users#new'
   end
 
   it "should get new students page" do

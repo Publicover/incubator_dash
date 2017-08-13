@@ -19,7 +19,7 @@ RSpec.describe "Renamed routes" do
   end
 
   it "gets /change_avatar" do
-    expect(:get => '/students/:id/change_avatar').to route_to(:controller => "students", :action => "change_avatar", :id =>":id")
+    expect(:get => '/users/:id/change_avatar').to route_to(:controller => "users", :action => "change_avatar", :id =>":id")
   end
 
 end

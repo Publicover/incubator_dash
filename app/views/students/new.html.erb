@@ -3,13 +3,13 @@
 
 <%= render 'form' %>
 
-<% if session[:user_flavor] == "admin" %>
+<% if session[:user_role] == "admin" %>
   <p>View Students: <%= link_to 'STUDENTS', admins_path %></p>
 <% else %>
   <p>View Assignments: <%= link_to 'STUDENTS', students_path %></p>
 <% end %>
 
-<% if session[:user_flavor] == "admin" %>
+<% if session[:user_role] == "admin" %>
   <p>Make a new assignment: <%= link_to 'NEW ASSIGNMENTS', new_assignment_path %></p>
 <% end %>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>

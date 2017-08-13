@@ -1,9 +1,10 @@
-require 'rails_helper'
+  require 'rails_helper'
 
 RSpec.describe "Student navigation" do
 
   before do
-    @student = Student.create(name: "jill", email: "jill@jill.com", password: "password", flavor: "student", admin_id: 1)
+    new_student = User.create(name: "jill", email: "jill@jill.com",
+      password: "password", role: "student", course_name: "GBO INC")
     visit '/'
     expect(page).to have_text("You must log in to access this page")
     fill_in 'email', with: 'jill@jill.com'

@@ -2,12 +2,12 @@
   <div class="signin-centered">
     <h1>ENTER YOUR NEW PASSWORD</h1>
     <div class="signin-box">
-      <%= form_for @student, :url => password_reset_path(params[:id]) do |f| %>
-        <% if @student.errors.any? %>
+      <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+        <% if @user.errors.any? %>
         <div class="error_messages">
           <h2>Form is invalid</h2>
           <ul>
-          <% for message in @student.errors.full_messages %>
+          <% for message in @user.errors.full_messages %>
             <ul><%= message %></ul>
           <% end %>
           </ul>

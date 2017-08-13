@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
   # def index
   #   # WHEN YOU DO ASSIGNMENT, YOU LIST IT AS SUCH SO
   #   # STUDENT CAN ONLY SEE THEIR OWN WORK:
-  #   # @assingments = Assignment.where(student_id: session[:user_id])
+  #   # @assingments = Assignment.where(user_id: session[:user_id])
   #
   # end
 
@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
     # @students = Admin.where(id: session[:user_id]) || @students = Student.where(id: session[:user_id])
     @students = Student.where(id: session[:user_id])
     @assignments = Assignment.all
-    # @homeworks = Homework.where(student_id: session[:user_id])
+    # @homeworks = Homework.where(user_id: session[:user_id])
 
     # respond_to do |format|
     #   format.html
@@ -58,7 +58,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @student.destroy
 
-    # if session[:user_flavor] == "admin"
+    # if session[:user_role] == "admin"
     #   redirect_to admins_path
     # else
     #   redirect_to students_path
@@ -91,6 +91,6 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:name, :email, :password, :flavor, :admin_id, :avatar, assignment_ids: [])
+      params.require(:student).permit(:name, :email, :password, :role, :admin_id, :avatar, assignment_ids: [])
     end
 end

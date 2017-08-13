@@ -5,7 +5,7 @@ one:
   name: jill
   email: jill@jill.com
   password_digest: <%= BCrypt::Password.create("jimjimjim") %>
-  flavor: student
+  role: student
   admin_id: 1
   admin: one
   # avatar_file_name: jennifer_connelly.jpg
@@ -18,6 +18,6 @@ two:
   name: jane
   email: jane@jane.com
   password_digest: <%= BCrypt::Password.create("jimjimjim") %>
-  flavor: student
+  role: student
   admin_id: 1
   admin: one

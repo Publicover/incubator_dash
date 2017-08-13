@@ -1,2 +1,2 @@
-name,email,password,flavor,admin_id
-jill,jill@jill.com,password,student,1
+name,email,password,role,course_name
+jill,jill@jill.com,password,student,GBO INC

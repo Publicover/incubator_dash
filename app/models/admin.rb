@@ -8,7 +8,7 @@ class Admin < ApplicationRecord
     # default_url: "/images/default_avatar_silhoutte.png",
     allow_nil: true
   validates_attachment_content_type :avatar, content_type: /\Aimage\//
-  validates :name, :password_digest, :flavor, presence: true
+  validates :name, :password_digest, :role, presence: true
   validates :email, presence: true, format: { with: /@/, message: "Must be email address."},
                     length: { in: 8..250 }
 end

@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "dashboard index" do
 
   before do
-    new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
+    @user = User.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin",
+      course_name: "GBO INC")
     visit '/'
     expect(page).to have_text("You must log in to access this page")
     fill_in 'email', with: 'jim@jim.com'
@@ -15,7 +16,7 @@ RSpec.describe "dashboard index" do
   it "should get name" do
     expect(page).to have_text("Hey, jim")
     expect(page).to have_text("session[:user_name]: jim")
-    expect(page).to have_text("session[:user_flavor]: admin")
+    expect(page).to have_text("session[:user_role]: admin")
   end
 
 end

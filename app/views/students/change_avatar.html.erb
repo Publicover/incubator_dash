@@ -30,7 +30,7 @@
 <% end %>
 <br>
 <p>Dashboard: <%= link_to "FRONT PAGE", root_path %></p>
-<% if session[:user_flavor] == "admin" %>
+<% if session[:user_role] == "admin" %>
   <p>View Students: <%= link_to 'STUDENTS', admins_path %></p>
   <p>View Profile: <%= link_to 'USER PROFILE', admin_path(session[:user_id]) %></p>
 <% else %>
@@ -39,7 +39,7 @@
 <% end %>
 <p>Change Avatar:<%= link_to 'AVATAR', change_avatar_student_path(session[:user_id]) %> </p>
 
-<% if session[:user_flavor] == "admin" %>
+<% if session[:user_role] == "admin" %>
   <p>Make a new student: <%= link_to 'NEW STUDENTS', new_student_path %></p>
   <p>View assignments: <%= link_to "ASSIGNMENT INDEX", assignments_path %></p>
   <p>Make a new assignment: <%= link_to 'NEW ASSIGNMENTS', new_assignment_path %></p>

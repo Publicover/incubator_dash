@@ -4,7 +4,7 @@ RSpec.describe ResetMailer do
 
   before do
     student = Student.create(name: "jill", email: "jill@jill.com",
-      password: "password", flavor: "student", admin_id: 1)
+      password: "password", role: "student", admin_id: 1)
   end
 
   describe "sending it" do

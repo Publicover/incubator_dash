@@ -14,7 +14,7 @@ class StudentCanCreateAvatarTest < ActionDispatch::IntegrationTest
       { name: "testson",
         email: "test@test.com",
         password: "password",
-        flavor: "student",
+        role: "student",
         admin_id: 1,
         avatar: image,
         assignment_ids: [1, 2] }
@@ -37,7 +37,7 @@ class StudentCanCreateAvatarTest < ActionDispatch::IntegrationTest
   #         name: updated_name,
   #         email: student.email,
   #         password: student.password,
-  #         flavor: student.flavor,
+  #         role: student.role,
   #         admin_id: student.admin_id,
   #         avatar: image,
   #         assignment_ids: student.assignment_ids } }

@@ -29,10 +29,10 @@ class AdminTest < ActiveSupport::TestCase
     assert_not_nil @admin.errors[:password]
   end
 
-  test "invalid without flavor" do
-    @admin.flavor = nil
+  test "invalid without role" do
+    @admin.role = nil
     refute @admin.valid?
-    assert_not_nil @admin.errors[:flavor]
+    assert_not_nil @admin.errors[:role]
   end
 
   test "should have students" do

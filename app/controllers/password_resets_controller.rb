@@ -5,22 +5,22 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
-    @student = Student.find_by_password_reset_token!(params[:id])
+    @user = User.find_by_password_reset_token!(params[:id])
   end
 
   def create
-    student = Student.find_by_email(params[:email])
-    student.send_password_reset if student
+    user = User.find_by_email(params[:email])
+    user.send_password_reset if user
     redirect_to login_path, :notice => "Email sent with reset instructions"
   end
 
   def update
-    # per the railscast except for moving student_params to private here per hartl
+    # per the railscast except for moving user_params to private here per hartl
     # https://www.railstutorial.org/book/password_reset
-    @student = Student.find_by_password_reset_token!(params[:id])
-    if @student.password_reset_send_at < 2.hours.ago
+    @user = User.find_by_password_reset_token!(params[:id])
+    if @user.password_reset_send_at < 2.hours.ago
       redirect_to new_password_reset_path, :alert => "Password reset has expired"
-    elsif @student.update_attributes(student_params)
+    elsif @user.update_attributes(user_params)
       redirect_to login_path, :notice => "Password has been reset."
     else
       render :edit
@@ -29,8 +29,8 @@ class PasswordResetsController < ApplicationController
 
   private
 
-    def student_params
-      params.require(:student).permit(:password, :password_confirmation)
+    def user_params
+      params.require(:user).permit(:password, :password_confirmation)
     end
 
     def disable_nav

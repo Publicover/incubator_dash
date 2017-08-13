@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "dashboard index" do
 
   before do
-    guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", flavor: "admin")
-    lady = Student.create(name: "jill", email: "jill@jill.com", password: "password", flavor: "student", admin_id: 1)
+    guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
+    lady = Student.create(name: "jill", email: "jill@jill.com", password: "password", role: "student", admin_id: 1)
     visit '/'
     expect(page).to have_text("You must log in to access this page")
   end

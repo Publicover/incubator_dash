@@ -1,13 +1,14 @@
 class HomeworksController < ApplicationController
   # before_action :set_homework
   # before_action :logged_in_as_admin?
-  before_action :logged_in_as_student?
+  # before_action :logged_in_as_student?
+  before_action :logged_in?
 
   def index
-    # if session[:user_flavor] == "admin"
+    # if session[:user_role] == "admin"
       @homework = Homework.all
     # else
-    #   @homeworks = Homework.where(student_id: session[:user_id])
+    #   @homeworks = Homework.where(user_id: session[:user_id])
     # end
   end
 
@@ -47,7 +48,7 @@ class HomeworksController < ApplicationController
     @homework = Homework.find(params[:id])
     @homework.destroy
 
-    if session[:user_flavor] == "admin"
+    if session[:user_role] == "admin"
       redirect_to homeworks_path
     else
       redirect_to students_path
@@ -58,13 +59,13 @@ class HomeworksController < ApplicationController
 
     def set_homework
       @homework = Homework.find(params[:id])
-      # unless @assignment.student_id == session[:user_id]
-      # unless @assignment.student_ids.include?(session[:user_id])
+      # unless @assignment.user_id == session[:user_id]
+      # unless @assignment.user_ids.include?(session[:user_id])
       #   redirect_to root_path
       # end
     end
 
     def homework_params
-      params.require(:homework).permit(:title, :student_id, :assignment_id, :document)
+      params.require(:homework).permit(:title, :user_id, :assignment_id, :document)
     end
 end

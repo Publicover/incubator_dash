@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
 
+  # get 'users/index'
+  #
+  # get 'users/show'
+  #
+  # get 'users/new'
+  #
+  # get 'users/edit'
+  #
+  # get 'users/create'
+  #
+  # get 'users/update'
+  #
+  # get 'users/destroy'
+  #
+  # get 'users/change_avatar'
+  #
+  # get 'users/import'
+
   get 'homes/index'
 
   get 'password_resets/new'
@@ -12,9 +30,9 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :admins
+  # resources :admins
 
-  resources :students do
+  resources :users do
     collection { post :import }
     member do
       get "change_avatar"

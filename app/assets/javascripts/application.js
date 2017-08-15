@@ -28,13 +28,13 @@ $(document).on('turbolinks:load', function()  {
  });
 
  $(document).on('turbolinks:load', function()  {
-   $('#student-import').attr('disabled', true);
+   $('#admin-import').attr('disabled', true);
    $('input:file').change(
      function(){
        if ($(this).val()){
-         $('#student-import').removeAttr('disabled');
+         $('#admin-import').removeAttr('disabled');
        } else {
-         $('#student-import').attr('disabled', true);
+         $('#admin-import').attr('disabled', true);
        }
      }
    );

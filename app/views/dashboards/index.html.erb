@@ -20,7 +20,7 @@
       <p>View Profile: <%= link_to 'USER PROFILE', user_path(session[:user_id]) %></p>
     <% else %>
       <p>View Profile: <%= link_to 'USER PROFILE', user_path(session[:user_id]) %></p>
-      <p>View Assignments: <%= link_to 'ASSIGNMENTS', users_path %></p>
+      <p>View Assignments: <%= link_to 'ASSIGNMENTS', assignments_path %></p>
     <% end %>
     <p>Change Avatar:<%= link_to 'AVATAR', change_avatar_user_path(session[:user_id]) %> </p>
 

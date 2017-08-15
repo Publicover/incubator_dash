@@ -1,8 +1,8 @@
 # class AssignmentsController < ApplicationController
   class AssignmentsController < ApplicationController
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
-    before_action :logged_in_as_admin?, except: [:index, :show]
-    # before_action :logged_in_as_student?
+    # before_action :logged_in_as_admin?, except: [:index, :show]
+    # before_action :logged_in_as_student?, only: [:index, :show]
     before_action :logged_in?
 
 

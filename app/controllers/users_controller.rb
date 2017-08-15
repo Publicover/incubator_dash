@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  # before_action :logged_in_as_admin?, only: [:new, :create, :destroy]
+  # before_action :logged_in_as_admin?
   # before_action :logged_in_as_student?
   before_action :logged_in?
 

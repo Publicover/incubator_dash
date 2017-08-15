@@ -1,6 +1,6 @@
 class HomeworksController < ApplicationController
   # before_action :set_homework
-  before_action :logged_in_as_admin?, except: [:index, :show]
+  # before_action :logged_in_as_admin?
   # before_action :logged_in_as_student?
   before_action :logged_in?
 

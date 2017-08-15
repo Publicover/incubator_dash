@@ -15,7 +15,8 @@
   <% if type == "pdf" || type == "docx" || type == "xlsx" || type == "jpeg" || type == "jpg" %>
     <%= image_tag("#{type}_icon50.png") %>
   <% else %>
-    UPLOADED FILE
+    <p><%= "#{type.upcase}" %> FILE UPLOADED: </p>
+    <div class='pink'><%= "#{@homework.document_file_name}" %></div>
   <% end %>
 <% end%>
 

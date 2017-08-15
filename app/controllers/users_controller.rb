@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :logged_in?
 
   def index
-    @students = User.where(course_name: session[:course_name])
+    @students = User.where(course_name: session[:course_name]) && User.where(role: "student")
     @assignments = Assignment.all
     if session[:user_role] == "admin"
       render 'admin_index'

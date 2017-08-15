@@ -10,20 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811201431) do
-
-  create_table "admins", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "role"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-  end
+ActiveRecord::Schema.define(version: 20170815215805) do
 
   create_table "assignments", force: :cascade do |t|
     t.string   "title"
@@ -38,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170811201431) do
 
   create_table "assignments_students", id: false, force: :cascade do |t|
     t.integer "assignment_id", null: false
-    t.integer "user_id",    null: false
+    t.integer "user_id",       null: false
   end
 
   create_table "assignments_users", id: false, force: :cascade do |t|
@@ -73,23 +60,6 @@ ActiveRecord::Schema.define(version: 20170811201431) do
     t.datetime "document_updated_at"
     t.index ["assignment_id"], name: "index_homeworks_on_assignment_id"
     t.index ["user_id"], name: "index_homeworks_on_user_id"
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "role"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "admin_id"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_send_at"
-    t.index ["admin_id"], name: "index_students_on_admin_id"
   end
 
   create_table "users", force: :cascade do |t|

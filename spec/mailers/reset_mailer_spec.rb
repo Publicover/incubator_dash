@@ -3,14 +3,14 @@ require "rails_helper"
 RSpec.describe ResetMailer do
 
   before do
-    student = Student.create(name: "jill", email: "jill@jill.com",
-      password: "password", role: "student", admin_id: 1)
+    user = User.create(name: "jill", email: "jill@jill.com",
+      password: "password", role: "student", course_name: "GBO INC")
   end
 
   describe "sending it" do
-    let(:mail) { described_class.password_reset(student).deliver_now }
-    let(:student) { Student.create(name: "jill", email: "jill@jill.com",
-      id: 1, password_reset_token: "sendthisrightawayplease") }
+    let(:mail) { described_class.password_reset(user).deliver_now }
+    let(:user) { User.create(name: "jill", email: "jill@jill.com",
+      id: 1, course_name: "GBO INC", password_reset_token: "sendthisrightawayplease") }
     let(:address) { ["jill@jill.com"] }
 
     it "has a subject" do

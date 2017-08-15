@@ -10,8 +10,8 @@ RSpec.describe Homework do
   #   new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
   # end
 
-  let(:student_one) { Student.create(name: "jim", email: "jim@jim.com",
-    password: "password", role: "admin", admin_id: 1) }
+  let(:student_one) { User.create(name: "jill", email: "jill@jill.com",
+    password: "password", role: "student", course_name: "GBO INC") }
   let(:assignment_one) { Assignment.create(title: "title", description: "whatever", due_date: Date.new(2019-1-1))}
 
   subject { described_class.create(title: "lesson?", user_id: student_one.id, assignment_id: assignment_one.id) }

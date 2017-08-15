@@ -1,9 +1,16 @@
 <h1>Reminders#write_email</h1>
 <p>Find me in app/views/reminders/write_email.html.erb</p>
 
+<center>
 <h1>Write an email</h1>
+<center>
+
+<div class="signin-box">
 
 <%= form_tag reminders_send_email_path do %>
  <%= email_field_tag :address, nil, placeholder: "Email address" %>
- <%= submit_tag "SEND ME AN EMAIL"%>
+ <%= submit_tag "SEND ME AN EMAIL", class: 'pink-btn'%>
 <% end %>
+
+</center>
+</div>

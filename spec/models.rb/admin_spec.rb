@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Admin do
+RSpec.describe User do
 
   # before :each do
   #   new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
@@ -10,7 +10,8 @@ RSpec.describe Admin do
   #   new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
   # end
 
-  subject { described_class.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin") }
+  subject { described_class.create(name: "jim", email: "jim@jim.com",
+    password: "password", role: "admin", course_name: "GBO INC") }
 
   it "needs a name" do
     subject.name = nil
@@ -29,6 +30,11 @@ RSpec.describe Admin do
 
   it "needs a role" do
     subject.role = nil
+    expect(subject).to_not be_valid
+  end
+
+  it "needs a course name" do
+    subject.course_name = nil
     expect(subject).to_not be_valid
   end
 

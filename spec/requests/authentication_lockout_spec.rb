@@ -44,7 +44,7 @@ RSpec.describe "Authentication" do
   end
 
   it "denies access to creating new students" do
-    expect { post '/users', params: { user: @user } }.to_not change(Student, :count)
+    expect { post '/users', params: { user: @user } }.to_not change(User, :count)
     # expect(response).to redirect_to root_path
     # follow_redirect!
     expect(response).to redirect_to login_path

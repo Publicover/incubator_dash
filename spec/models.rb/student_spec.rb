@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Student do
+RSpec.describe User do
 
-  let(:admin_one) { Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin") }
+  let(:admin_one) { User.create(name: "jim", email: "jim@jim.com",
+    password: "password", role: "admin", course_name: "GBO INC") }
 
   subject { described_class.create(name: "jill", email: "jill@jill.com",
-    password: "password", role: "student", admin_id: admin_one.id) }
+    password: "password", role: "student", course_name: "GBO INC") }
 
   it "needs a name" do
     subject.name = nil
@@ -27,8 +28,13 @@ RSpec.describe Student do
     expect(subject).to_not be_valid
   end
 
-  it "needs an admin id" do
-    subject.admin_id = nil
+  # it "needs an admin id" do
+  #   subject.admin_id = nil
+  #   expect(subject).to_not be_valid
+  # end
+
+  it "needs a course name" do
+    subject.course_name = nil
     expect(subject).to_not be_valid
   end
 

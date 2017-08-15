@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @assignments = Assignment.all
     if session[:user_role] == "admin"
       render 'admin_index'
+    else
+      render 'index'
     end
   end
 

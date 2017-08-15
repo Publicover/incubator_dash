@@ -21,7 +21,7 @@ RSpec.describe "Student homework" do
 
   it "allows images" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     # within_table("students-table") do
     #   # find(:xpath, "//*[text()='Bio']").click
     #   # find(:xpath, "//tr[td[contains(.,'jill')]]/td/a", :text => 'Bio').click
@@ -43,7 +43,7 @@ RSpec.describe "Student homework" do
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'jennifer_connelly.jpg'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'jpg_icon50.png')]")
   end
@@ -51,53 +51,53 @@ RSpec.describe "Student homework" do
 
   it "allows PDFs" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.pdf'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'pdf_icon50.png')]")
   end
 
   it "allows TXTs" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.txt'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     # expect(page).to have_xpath("//img[contains(@src,'example.txt')]")
-    expect(page).to have_text("UPLOADED FILE")
+    expect(page).to have_text("FILE UPLOADED:")
   end
 
   it "allows DOCXs" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.docx'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'docx_icon50.png')]")
   end
 
   it "allows XLSXs" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.xlsx'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'xlsx_icon50.png')]")
   end

@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "Site login" do
 
   before do
-    new_student = Student.create(name: "jill", email: "jill@jill.com",
-      password: "password", role: "student", admin_id: 1)
-    new_admin = Admin.create(name: "jim", email: "jim@jim.com",
-      password: "password", role: "admin")
+    new_student = User.create(name: "jill", email: "jill@jill.com",
+      password: "password", role: "student", course_name: "GBO INC")
+    new_admin = User.create(name: "jim", email: "jim@jim.com",
+      password: "password", role: "admin", course_name: "GBO INC")
     visit '/'
     expect(page).to have_text("You must log in to access this page")
     fill_in 'email', with: 'jill@jill.com'

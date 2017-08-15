@@ -27,7 +27,7 @@ RSpec.describe "Student avatar" do
     # expect(@student.avatar_content_type). to eq "jpg"
     # expect(@student.name).to eq "jill"
     # expect(@student.name).to eq "jill"
-    click_button "Update User"
+    click_button "Update"
     # expect(page).to have_content "alt=Jennifer connelly"
     # expect(page).to have_xpath('//img[src="//Users/jimpublicover/Desktop/incubator_dash/spec/fixtures/jennifer_connelly.jpg"]')
     expect(page).to have_xpath("//img[contains(@src,'jennifer_connelly.jpg')]")

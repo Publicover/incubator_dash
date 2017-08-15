@@ -21,13 +21,13 @@ RSpec.describe "Students can get icons" do
 
   it "shows pdf icon" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.pdf'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'pdf_icon50.png')]")
     visit '/users/1'
@@ -37,13 +37,13 @@ RSpec.describe "Students can get icons" do
 
   it "shows docx icon" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.docx'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'docx_icon50.png')]")
     visit '/users/1'
@@ -53,13 +53,13 @@ RSpec.describe "Students can get icons" do
 
   it "shows jpg icon" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'jennifer_connelly.jpg'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'jpg_icon50.png')]")
     visit '/users/1'
@@ -69,13 +69,13 @@ RSpec.describe "Students can get icons" do
 
   it "shows xlsx icon" do
     click_link "ASSIGNMENTS"
-    expect(page).to have_text("Students#index")
+    expect(page).to have_text("Listing All Assignments")
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'example.xlsx'))
-    click_button "Update Homework"
+    click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'xlsx_icon50.png')]")
     visit '/users/1'

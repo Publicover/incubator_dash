@@ -20,7 +20,7 @@ RSpec.describe "Student navigation" do
 
   it "should get their own profile" do
     click_link 'ASSIGNMENTS'
-    expect(page).to have_content 'Students#index'
+    expect(page).to have_content 'Assignments#index'
   end
 
   it "should get new students page" do

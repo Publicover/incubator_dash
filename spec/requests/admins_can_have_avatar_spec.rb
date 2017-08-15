@@ -17,10 +17,10 @@ RSpec.describe "Admin avatar" do
   it "should upload without trouble" do
     visit '/'
     expect(page).to have_content('View Profile:')
-    click_link "USER PROFILE"
-    click_link "EDIT"
+    # click_link "USER PROFILE"
+    click_link "Avatar update"
     attach_file("user[avatar]", Rails.root.join('spec', 'fixtures', 'jennifer_connelly.jpg'))
-    click_button "Update User"
+    click_button "Update Avatar"
     expect(page).to have_xpath("//img[contains(@src,'jennifer_connelly.jpg')]")
   end
 

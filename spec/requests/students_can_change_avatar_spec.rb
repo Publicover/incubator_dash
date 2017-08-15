@@ -20,11 +20,11 @@ RSpec.describe "Student avatar" do
   end
 
   it "allows updates" do
-    click_link "AVATAR"
+    click_link "Avatar update"
     expect(page).to have_text("Students#change_avatar")
     attach_file("user[avatar]", Rails.root.join('spec', 'fixtures',
       'jennifer_connelly_2.jpg'))
-    click_button "Update User"
+    click_button "Update Avatar"
     expect(page).to have_text("jill")
     expect(page).to have_xpath("//img[contains(@src,'jennifer_connelly_2.jpg')]")
   end

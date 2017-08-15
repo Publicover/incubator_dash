@@ -12,7 +12,7 @@
 
 <h1> ASSIGNMENT: <div class="pink"><%= @assignment.title %> </div></h1>
 <p>
-  <button type="button" id="homework_popup_button">Upload some homework?</button>
+  <button type="button" class='pink-btn' id="homework_popup_button">Upload some homework?</button>
 </p>
 <%= form_for @homework, html: { multipart: true, id: 'upload_homework' } do |f| %>
 
@@ -34,7 +34,7 @@
   </p>
 
   <p>
-    <%= f.submit, :id => "admin-import" %>
+    <%= f.submit "Upload Homework", class: 'pink-btn', id: "admin-import" %>
   </p>
 <% end %>
 

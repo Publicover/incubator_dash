@@ -1,5 +1,7 @@
 <center>
 
+  <div class="signin-box">
+
 <%= form_for @homework, html: {multipart: true } do |f| %>
 
   <% if @homework.errors.any? %>
@@ -40,6 +42,7 @@
 
 <% end %>
 
+</div>
 
 
 </center>

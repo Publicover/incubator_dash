@@ -2,6 +2,8 @@
 <p> Glad you made it, developer.</p>
 
 <center>
+
+  <div class="signin-box">
 <%= form_for @user, html: { multipart: true } do |f| %>
 
   <% if @user.errors.any? %>
@@ -24,8 +26,10 @@
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Update Avatar', class: 'pink-btn', id: 'admin-import' %>
   </p>
+
+  </div>
 
 <% end %>
 <br>
@@ -48,4 +52,6 @@
   <br>SEND AN EMAIL: <%= link_to "#holdmybeer", reminders_write_email_path %></p><br>
 <% end %>
 <p><%= link_to 'Logout', logout_path, method: :delete %></p>
+
+
 </center>

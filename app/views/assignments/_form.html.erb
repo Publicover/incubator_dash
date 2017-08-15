@@ -1,4 +1,6 @@
 <center>
+
+  <div class="signin-box">
 <%= form_for @assignment do |f| %>
 
   <% if @assignment.errors.any? %>
@@ -34,7 +36,7 @@
 
   <p>
     <%= f.label "Students" %> <br>
-    <%= f.collection_check_boxes :user_ids, User.all, :id, :name do |user| %>
+    <%= f.collection_check_boxes :user_ids, User.where(role: "student"), :id, :name do |user| %>
     <div class="collection-check-box">
         <%= user.check_box %>
         <%= user.label %>
@@ -48,8 +50,10 @@
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Create Assignment', class: 'pink-btn' %>
   </p>
+
+</div>
 
 <% end %>
 

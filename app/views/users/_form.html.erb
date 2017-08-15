@@ -1,4 +1,6 @@
 <center>
+
+  <div class="signin-box">
 <%= form_for @user, html: { multipart: true } do |f| %>
 
   <% if @user.errors.any? %>
@@ -55,8 +57,10 @@
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Create Student', class: 'admin-import', class: 'pink-btn' %>
   </p>
+
+</div>
 
 <% end %>
 </center>

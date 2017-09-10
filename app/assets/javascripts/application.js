@@ -53,29 +53,34 @@ $(document).on('turbolinks:load', function()  {
    );
  });
 
-
-$(document).on('turbolinks:load', function()  {
-  // $('#password').onfocus(function() {
-  //   $(this).style.background = 'yellow';
-  //   });
-  // );
-  // $('#password').style.background = 'yellow';
-});
-
 function textLength(value){
    var maxLength = 10;
+   var letter = 'a';
    if(value.length > maxLength) return false;
+   else if (value === letter) return false;
    return true;
 };
 
-$(document).on('turbolinks:load', function() {
-  $("#password").on ({
-  	focus: function() {
-    	$(this).css("background-color", "yellow");
-    },
-    keyup: function(){
-      if(!textLength(this.value)) alert('text is too long!');
-    }
+// function yellowBackground() {
+  // $(this).css("background-color", "yellow");
+// };
+
+// $(document).on('turbolinks:load', function() {
+  // $("#password").on ({
+  	// focus: function() {
+    	// $(this).css("background-color", "yellow");
+    // },
+    // keyup: function(){
+      // if(!textLength(this.value)) alert('text is too long!');
+    // }
+  // })
+// });
+
+
+
+
+
+
   // $("password").onfocus ({
   //   $(this).css("background-color", "yellow")
   // });
@@ -86,8 +91,7 @@ $(document).on('turbolinks:load', function() {
     // 	$(".two").animate({left: "50px"});
     // },
 
-  })
-});
+
 
  // $(document).on('turbolinks:load', function() {
 

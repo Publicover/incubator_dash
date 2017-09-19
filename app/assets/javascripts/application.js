@@ -28,30 +28,30 @@ $(document).on('turbolinks:load', function()  {
  });
 
  $(document).on('turbolinks:load', function()  {
-   $('#admin-import').attr('disabled', true);
+   $('.file-import').attr('disabled', true);
    $('input:file').change(
      function(){
        if ($(this).val()){
-         $('#admin-import').removeAttr('disabled');
+         $('.file-import').removeAttr('disabled');
        } else {
-         $('#admin-import').attr('disabled', true);
+         $('.file-import').attr('disabled', true);
        }
      }
    );
  });
 
- $(document).on('turbolinks:load', function()  {
-   $('#assignment-import').attr('disabled', true);
-   $('input:file').change(
-     function(){
-       if ($(this).val()){
-         $('#assignment-import').removeAttr('disabled');
-       } else {
-         $('#assignment-import').attr('disabled', true);
-       }
-     }
-   );
- });
+ // $(document).on('turbolinks:load', function()  {
+  //  $('#assignment-import').attr('disabled', true);
+  //  $('input:file').change(
+    //  function(){
+      //  if ($(this).val()){
+        //  $('#assignment-import').removeAttr('disabled');
+      //  } else {
+        //  $('#assignment-import').attr('disabled', true);
+      //  }
+    //  }
+  //  );
+ // });
 
 function textLength(value){
    var maxLength = 10;

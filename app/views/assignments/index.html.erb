@@ -44,7 +44,7 @@
   <h1>IMPORT ASSIGNMENT</h1>
   <%= form_tag import_assignments_path, multipart: true do %>
     <%= file_field_tag :file, :id => 'choose-assignment'  %>
-    <%= submit_tag "IMPORT CSV", :class => "pink-btn", :id => "assignment-import"  %>
+    <%= submit_tag "IMPORT CSV", :class => "pink-btn file-import", :id => "assignment-import"  %>
     <% end %>
   </div>
 <% end %>

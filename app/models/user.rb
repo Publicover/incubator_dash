@@ -1,15 +1,22 @@
+# class to inherit user types from. includes all basic information.
 class User < ApplicationRecord
   has_secure_password
   has_and_belongs_to_many :assignments
   has_many :homeworks
   validates :name, :password_digest, :role, :course_name, presence: true
-  validates :email, uniqueness: true, format: { with: /\A\w+ +\w+\z/, message: "Must be email address."},
+  validates :email,
+            uniqueness: true,
+            format: { with: /\A\w+ +\w+\z/, message: 'Must be email address.' },
             length: { in: 8..250 }
   has_attached_file :avatar,
-    styles: { medium: "300x300>", thumb: "100x100>", tiny: '45x45#' },
-    default_url: "/images/:style/default.png",
-    allow_nil: true
-  validates_attachment_content_type :avatar, content_type: /\Aimage\//
+                    styles: {
+                      medium: '300x300>',
+                      thumb: '100x100>',
+                      tiny: '45x45#'
+                    },
+                    default_url: '/images/:style/default.png',
+                    allow_nil: true
+  validates_attachment_content_type :avatar, content_type: %r{\Aimage\/}
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|

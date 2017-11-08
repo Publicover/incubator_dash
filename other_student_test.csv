@@ -1,2 +1,2 @@
-name,email,password,role,admin_id
-jeff,jeff@jeff.com,password,student,1
+name,email,password,role,course
+jeff,jeff@jeff.com,password,student,GSO

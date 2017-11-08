@@ -16,7 +16,7 @@ class StudentsMustChangePasswordOnFirstSigningInTest < ActionDispatch::Integrati
     # Trying to post to new_assignment_path gives flash notice we can assert_equal flash[:notice]
     post students_path, params: { student: { name: "jill",
       email: "jill@jill.com", password: "password", role: "student",
-      admin_id: 1}}
+      course: "GSO"}}
     assert_equal "You do not have permission to access that page.", flash[:notice]
     # logout
     delete logout_path

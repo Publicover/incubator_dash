@@ -15,7 +15,7 @@ class StudentCanCreateAvatarTest < ActionDispatch::IntegrationTest
         email: "test@test.com",
         password: "password",
         role: "student",
-        course: "GSO",
+        course_name: "GSO",
         avatar: image,
         assignment_ids: [1, 2] }
       }

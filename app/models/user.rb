@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :name, :password_digest, :role, :course_name, presence: true
   validates :email,
             uniqueness: true,
-            format: { with: /\A\w+ +\w+\z/, message: 'Must be email address.' },
+            format: { with: /\A\S+@.+\.\S+\z/, message: 'Must be email address.' },
             length: { in: 8..250 }
   has_attached_file :avatar,
                     styles: {

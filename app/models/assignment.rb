@@ -49,5 +49,4 @@ class Assignment < ApplicationRecord
       Assignment.create!(row.to_hash)
     end
   end
-
 end

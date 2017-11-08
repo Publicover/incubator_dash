@@ -6,12 +6,13 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.3.1'
-gem "aws-sdk", '~> 2'
-gem 'pg'
+gem 'aws-sdk', '~> 2'
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem 'rails_12factor', group: :production
 gem 'paperclip'
+gem 'pg'
+gem 'rails_12factor', group: :production
+
 # gem 'jquery-turbolinks'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,9 +39,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'fasterer'
-gem 'simplecov'
+gem 'reek'
 gem 'rubocop', require: false
+gem 'simplecov'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -53,8 +54,9 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'sqlite3'
+
   # gem 'selenium-webdriver', '>= 3.3'
 end
 

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-08T17:06:35-05:00">2017-11-08T17:06:35-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-09T10:43:08-05:00">2017-11-09T10:43:08-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.35
+         4.62
        </span>
     </span> hits/line)
   </h2>
@@ -77,7 +77,7 @@
         <td>12</td>
         <td>10</td>
         <td>2</td>
-        <td>32.0</td>
+        <td>34.1</td>
       </tr>
       
       <tr>
@@ -137,7 +137,7 @@
         <td>22</td>
         <td>17</td>
         <td>5</td>
-        <td>15.2</td>
+        <td>17.2</td>
       </tr>
       
       <tr>
@@ -333,7 +333,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.45
+         5.85
        </span>
     </span> hits/line)
   </h2>
@@ -365,7 +365,7 @@
         <td>12</td>
         <td>10</td>
         <td>2</td>
-        <td>32.0</td>
+        <td>34.1</td>
       </tr>
       
       <tr>
@@ -425,7 +425,7 @@
         <td>22</td>
         <td>17</td>
         <td>5</td>
-        <td>15.2</td>
+        <td>17.2</td>
       </tr>
       
       <tr>
@@ -995,8 +995,8 @@
           <code class="ruby">  def logged_in?</code>
         </li>
       
-        <li class="covered" data-hits="148" data-linenumber="6">
-          <span class="hits">148</span>
+        <li class="covered" data-hits="158" data-linenumber="6">
+          <span class="hits">158</span>
           
           <code class="ruby">    redirect_to login_path, notice: &#39;You must log in to access this page&#39; unless session[:user_id]</code>
         </li>
@@ -1109,8 +1109,8 @@
           <code class="ruby">      # end</code>
         </li>
       
-        <li class="covered" data-hits="228" data-linenumber="25">
-          <span class="hits">228</span>
+        <li class="covered" data-hits="243" data-linenumber="25">
+          <span class="hits">243</span>
           
           <code class="ruby">      @current_user ||= User.find(session[:user_id])</code>
         </li>
@@ -2753,38 +2753,38 @@
           <code class="ruby">    # user = Admin.find_by_email(params[:email]) || user = Student.find_by_email(params[:email])</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="11">
-          <span class="hits">37</span>
+        <li class="covered" data-hits="42" data-linenumber="11">
+          <span class="hits">42</span>
           
           <code class="ruby">    user = User.find_by_email(params[:email])</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="12">
-          <span class="hits">37</span>
+        <li class="covered" data-hits="42" data-linenumber="12">
+          <span class="hits">42</span>
           
           <code class="ruby">    if user &amp;&amp; user.authenticate(params[:password])</code>
         </li>
       
-        <li class="covered" data-hits="33" data-linenumber="13">
-          <span class="hits">33</span>
+        <li class="covered" data-hits="38" data-linenumber="13">
+          <span class="hits">38</span>
           
           <code class="ruby">      session[:user_id] = user.id</code>
         </li>
       
-        <li class="covered" data-hits="33" data-linenumber="14">
-          <span class="hits">33</span>
+        <li class="covered" data-hits="38" data-linenumber="14">
+          <span class="hits">38</span>
           
           <code class="ruby">      session[:user_role] = user.role</code>
         </li>
       
-        <li class="covered" data-hits="33" data-linenumber="15">
-          <span class="hits">33</span>
+        <li class="covered" data-hits="38" data-linenumber="15">
+          <span class="hits">38</span>
           
           <code class="ruby">      session[:user_name] = user.name</code>
         </li>
       
-        <li class="covered" data-hits="33" data-linenumber="16">
-          <span class="hits">33</span>
+        <li class="covered" data-hits="38" data-linenumber="16">
+          <span class="hits">38</span>
           
           <code class="ruby">      session[:course_name] = user.course_name</code>
         </li>
@@ -2795,8 +2795,8 @@
           <code class="ruby">      # session[:user_avatar] = user.avatar</code>
         </li>
       
-        <li class="covered" data-hits="33" data-linenumber="18">
-          <span class="hits">33</span>
+        <li class="covered" data-hits="38" data-linenumber="18">
+          <span class="hits">38</span>
           
           <code class="ruby">      redirect_to root_path, notice: &quot;You have logged in.&quot;</code>
         </li>
@@ -2909,8 +2909,8 @@
           <code class="ruby">    def disable_nav</code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="37">
-          <span class="hits">80</span>
+        <li class="covered" data-hits="90" data-linenumber="37">
+          <span class="hits">90</span>
           
           <code class="ruby">      @disable_nav = true</code>
         </li>

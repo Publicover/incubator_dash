@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Student homework" do
-
   before do
     new_student = User.create(name: "jill", email: "jill@jill.com",
       password: "password", role: "student", course_name: "GBO INC")
@@ -22,24 +21,8 @@ RSpec.describe "Student homework" do
   it "allows images" do
     click_link "ASSIGNMENTS"
     expect(page).to have_text("Listing All Assignments")
-    # within_table("students-table") do
-    #   # find(:xpath, "//*[text()='Bio']").click
-    #   # find(:xpath, "//tr[td[contains(.,'jill')]]/td/a", :text => 'Bio').click
-    #   # click_on "Bio"
-    #   # find('td:nth-child(4)').find('a[href=assignments/1]').click
-    #   # find('td:nth-child(4)').find(:xpath, "//a[@href='/assignments/1']").click
-    #   # find('td:nth-child(4)').find(:css, 'a[href="/assignments/1"]')
-    #   # find('td:nth-child(4)').click_link "Bio"
-    #   # expect('td:nth-child(1)').to eq "jill"
-    #   find('td:nth-child(4)').find(:xpath, "//*[text()='Bio']").click
-    # end
     visit '/assignments/1'
     expect(page).to have_text("ASSIGNMENT: Bio")
-    # within('td') do
-    #   click_on "Bio"
-    # end
-    # click_link "Bio"
-    # expect(page).to have_text("Assignments#show")
     click_button "Upload some homework?"
     attach_file("homework[document]", Rails.root.join('spec', 'fixtures',
       'jennifer_connelly.jpg'))
@@ -47,7 +30,6 @@ RSpec.describe "Student homework" do
     expect(page).to have_text("Homeworks#show")
     expect(page).to have_xpath("//img[contains(@src,'jpg_icon50.png')]")
   end
-
 
   it "allows PDFs" do
     click_link "ASSIGNMENTS"
@@ -72,7 +54,6 @@ RSpec.describe "Student homework" do
       'example.txt'))
     click_button "Upload Homework"
     expect(page).to have_text("Homeworks#show")
-    # expect(page).to have_xpath("//img[contains(@src,'example.txt')]")
     expect(page).to have_text("FILE UPLOADED:")
   end
 

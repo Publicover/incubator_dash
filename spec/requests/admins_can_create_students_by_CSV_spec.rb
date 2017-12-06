@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Admin student creation" do
-
   before do
-    # @admin = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
     @user = User.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin",
       course_name: "GBO INC")
     visit '/'

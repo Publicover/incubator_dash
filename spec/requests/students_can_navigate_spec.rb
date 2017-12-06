@@ -1,7 +1,6 @@
   require 'rails_helper'
 
 RSpec.describe "Student navigation" do
-
   before do
     new_student = User.create(name: "jill", email: "jill@jill.com",
       password: "password", role: "student", course_name: "GBO INC")

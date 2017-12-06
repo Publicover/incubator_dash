@@ -1,11 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Renamed routes" do
-
-  # it "gets /root" do
-  #   expect(:get => '/root').to route_to(:controller => "dashboards", :action => "index")
-  # end
-
   it "gets /login" do
     expect(:get => '/login').to route_to(:controller => "sessions", :action => "new")
   end

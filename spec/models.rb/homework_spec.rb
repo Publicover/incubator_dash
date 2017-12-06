@@ -1,15 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Homework do
-
-  # before :each do
-  #   new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
-  # end
-
-  # before :all do
-  #   new_guy = Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
-  # end
-
   let(:student_one) { User.create(name: "jill", email: "jill@jill.com",
     password: "password", role: "student", course_name: "GBO INC") }
   let(:assignment_one) { Assignment.create(title: "title", description: "whatever", due_date: Date.new(2019-1-1))}

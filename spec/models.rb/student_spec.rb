@@ -28,11 +28,6 @@ RSpec.describe User do
     expect(subject).to_not be_valid
   end
 
-  # it "needs an admin id" do
-  #   subject.admin_id = nil
-  #   expect(subject).to_not be_valid
-  # end
-
   it "needs a course name" do
     subject.course_name = nil
     expect(subject).to_not be_valid

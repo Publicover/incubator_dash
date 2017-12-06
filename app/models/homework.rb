@@ -13,9 +13,4 @@ class Homework < ApplicationRecord
     ],
     default_url: "/images/:style/default.png",
     message: "invalid attached file type"
-  # after_save :set_name
-
-  # def set_name
-    # self.update(title: "document_one")
-  # end
 end

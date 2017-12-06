@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Admin navigation" do
-
   before do
-    # Admin.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin")
     @user = User.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin",
       course_name: "GBO INC")
     visit '/'

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "dashboard index" do
-
   before do
     guy = User.create(name: "jim", email: "jim@jim.com",
       password: "password", role: "admin", course_name: "GBO INC")

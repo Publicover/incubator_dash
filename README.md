@@ -8,3 +8,4 @@ This app supports startup incubators as they go through their curricula, typical
 * Supports user avatars 
 * Authentication system was written from scratch, without the devise gem
 * Ajax calls prevent file upload errors by locking submit buttons before files are attached 
+* Robust RSpec test suite

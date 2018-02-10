@@ -1,24 +1,11 @@
-# README
+# DASH INCUBATOR 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app supports startup incubators as they go through their curricula, typically a 10-week process. The users are admins and students, which must be created before loggin in. Admins can enter assignments as well as class lists via CSV. Students upload homework assignments in nearly any file format directly to the site, and everything is stored on AWS. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Background jobs send reminder emails when due dates are approaching
+* Each user type has their own dashboard
+* Supports password reset emails 
+* Supports user avatars 
+* Authentication system was written from scratch, without the devise gem
+* Ajax calls prevent file upload errors by locking submit buttons before files are attached 
+* Robust RSpec test suite

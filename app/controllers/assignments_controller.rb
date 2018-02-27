@@ -3,7 +3,6 @@
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
     before_action :logged_in?
 
-
     def index
       @assignments = Assignment.all
     end

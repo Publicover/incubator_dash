@@ -1,23 +1,4 @@
 Rails.application.routes.draw do
-
-  # get 'users/index'
-  #
-  # get 'users/show'
-  #
-  # get 'users/new'
-  #
-  # get 'users/edit'
-  #
-  # get 'users/create'
-  #
-  # get 'users/update'
-  #
-  # get 'users/destroy'
-  #
-  # get 'users/change_avatar'
-  #
-  # get 'users/import'
-
   get 'homes/index'
 
   get 'password_resets/new'
@@ -25,12 +6,9 @@ Rails.application.routes.draw do
   get 'reminders/write_email'
   post 'reminders/send_email'
 
-  # get 'dashboards/index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-
-  # resources :admins
 
   resources :users do
     collection { post :import }
@@ -47,6 +25,5 @@ Rails.application.routes.draw do
   resources :password_resets
 
   root 'dashboards#index'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

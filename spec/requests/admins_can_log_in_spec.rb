@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Admin login" do
   before do
     @user = User.create(name: "jim", email: "jim@jim.com", password: "password", role: "admin",
-      course_name: "GBO INC")
+      course_name: "GBO INC", type: "#{ENV['BILLING_TYPE']}")
   end
 
   it "needs an email" do
